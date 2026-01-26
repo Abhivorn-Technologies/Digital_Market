@@ -50,23 +50,18 @@ const About = () => {
       <Navbar />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding relative overflow-hidden">
-          <div className="absolute inset-0 bg-hero-pattern" />
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none" />
-
-          <div className="max-w-7xl mx-auto container-padding relative">
+        <section className="section-padding bg-gradient-to-b from-muted/50 to-background">
+          <div className="max-w-7xl mx-auto container-padding">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="max-w-3xl"
             >
-              <span className="inline-block text-sm font-medium text-primary mb-4 tracking-wider uppercase">
-                About Us
-              </span>
+              <span className="section-label mb-4">About Us</span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Architects of{' '}
-                <span className="text-gradient">Digital Growth</span>
+                <span className="text-italic-bold text-gradient">Digital Growth</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
                 We're not your typical digital marketing agency. We're strategic partners 
@@ -79,7 +74,7 @@ const About = () => {
         </section>
 
         {/* Story Section */}
-        <section className="section-padding bg-card/50">
+        <section className="section-padding">
           <div className="max-w-7xl mx-auto container-padding">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -120,7 +115,7 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="glass-card p-8 md:p-12"
+                className="card-elevated p-8 md:p-10"
               >
                 <h3 className="text-xl font-bold text-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground mb-8">
@@ -140,7 +135,7 @@ const About = () => {
         </section>
 
         {/* Values Section */}
-        <section className="section-padding">
+        <section className="section-padding bg-muted/30">
           <div className="max-w-7xl mx-auto container-padding">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -149,9 +144,7 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <span className="inline-block text-sm font-medium text-primary mb-4 tracking-wider uppercase">
-                Our Values
-              </span>
+              <span className="section-label justify-center mb-4">Our Values</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
                 What Drives Us
               </h2>
@@ -167,9 +160,9 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="glass-card p-6 group hover:border-primary/50 transition-colors"
+                    className="card-elevated p-6 card-hover"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                       <IconComponent className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="text-lg font-bold text-foreground mb-2">{value.title}</h3>
@@ -182,7 +175,7 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section id="team" className="section-padding bg-card/50">
+        <section id="team" className="section-padding">
           <div className="max-w-7xl mx-auto container-padding">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -191,9 +184,7 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <span className="inline-block text-sm font-medium text-primary mb-4 tracking-wider uppercase">
-                Our Team
-              </span>
+              <span className="section-label justify-center mb-4">Our Team</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
                 Meet the Experts
               </h2>
@@ -207,9 +198,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-card p-6 text-center group"
+                  className="card-elevated p-6 text-center card-hover"
                 >
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-foreground">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-foreground">
                     {member.initial}
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>

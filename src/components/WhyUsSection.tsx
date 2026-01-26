@@ -1,127 +1,128 @@
 import { motion } from 'framer-motion';
-import { Check, X, Minus, Layers, Cpu, Globe, LineChart, Trophy, Rocket, LucideIcon } from 'lucide-react';
-import { comparisonData, whyUsFeatures } from '@/data/whyUs';
+import { Check, AlertTriangle, X, Layers, Cpu, Globe, LineChart, Trophy, Rocket, Zap, BarChart3 } from 'lucide-react';
+import { whyUsFeatures } from '@/data/whyUs';
 
-const iconMap: { [key: string]: LucideIcon } = {
-  Layers,
-  Cpu,
-  Globe,
-  LineChart,
-  Trophy,
-  Rocket,
-};
+const comparisonData = [
+  {
+    feature: 'Strategy & Intelligence',
+    icon: Layers,
+    pepper: { status: 'check', text: 'Unified strategy across SEO+GEO and creative' },
+    agencies: { status: 'warning', text: 'Strategy siloed to creative or SEO' },
+    tools: { status: 'cross', text: 'No strategic layer' },
+  },
+  {
+    feature: 'AI & Automation',
+    icon: Cpu,
+    pepper: { status: 'check', text: 'Adaptive AI agents automating workflows' },
+    agencies: { status: 'warning', text: 'Minimal automation' },
+    tools: { status: 'warning', text: 'Basic automation' },
+  },
+  {
+    feature: 'SEO + AEO + GEO',
+    icon: Globe,
+    pepper: { status: 'check', text: 'End-to-end SEO + GEO accountability' },
+    agencies: { status: 'warning', text: 'Traditional SEO only' },
+    tools: { status: 'cross', text: 'Only data output' },
+  },
+  {
+    feature: 'Speed & Scale',
+    icon: Zap,
+    pepper: { status: 'check', text: '10× faster delivery with AI workflows' },
+    agencies: { status: 'warning', text: 'Slow to scale' },
+    tools: { status: 'warning', text: 'Low accuracy and brand fit' },
+  },
+  {
+    feature: 'Measurement & ROI',
+    icon: BarChart3,
+    pepper: { status: 'check', text: 'Personalized dashboards & reporting' },
+    agencies: { status: 'warning', text: 'Basic reporting' },
+    tools: { status: 'cross', text: 'No ROI linkage' },
+  },
+  {
+    feature: 'Accountability',
+    icon: Trophy,
+    pepper: { status: 'check', text: 'Outcome-linked partnerships' },
+    agencies: { status: 'warning', text: 'Paid per deliverable' },
+    tools: { status: 'cross', text: 'No accountability' },
+  },
+];
 
-const renderValue = (value: string | boolean) => {
-  if (value === true) {
-    return <Check className="w-5 h-5 text-green-400" />;
-  }
-  if (value === false) {
-    return <X className="w-5 h-5 text-red-400" />;
-  }
-  return <span className="text-muted-foreground text-sm">{value}</span>;
+const StatusIcon = ({ status }: { status: string }) => {
+  if (status === 'check') return <Check className="w-5 h-5 text-green-500" />;
+  if (status === 'warning') return <AlertTriangle className="w-5 h-5 text-amber-500" />;
+  return <X className="w-5 h-5 text-red-500" />;
 };
 
 export const WhyUsSection = () => {
   return (
-    <section className="section-padding bg-card/50 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-card/50" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto container-padding relative">
+    <section className="section-padding bg-muted/30">
+      <div className="max-w-7xl mx-auto container-padding">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-sm font-medium text-primary mb-4 tracking-wider uppercase">
-            Why Choose Us
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            The <span className="text-gradient">Abhivorn</span> Advantage
+          <span className="section-label justify-center mb-4">Abhivorn vs Others</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Why Leading Brands{' '}
+            <span className="text-italic-bold text-gradient">Choose Abhivorn</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We're not your typical digital marketing agency. We're strategic partners 
-            who understand that success requires an integrated approach.
+            Compare how Abhivorn outperforms traditional agencies and tools with an 
+            AI-powered approach that unites strategy, technology, and talent.
           </p>
         </motion.div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {whyUsFeatures.map((feature, index) => {
-            const IconComponent = iconMap[feature.icon] || Layers;
-            return (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-6 group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4">
-                  <IconComponent className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
-            );
-          })}
-        </div>
 
         {/* Comparison Table */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="glass-card overflow-hidden"
+          className="card-elevated overflow-hidden"
         >
-          <div className="p-6 border-b border-border">
-            <h3 className="text-xl md:text-2xl font-bold text-foreground text-center">
-              How We Compare
-            </h3>
+          {/* Table Header */}
+          <div className="grid grid-cols-4 gap-4 p-4 md:p-6 bg-muted/50 border-b border-border font-semibold text-sm">
+            <div className="text-foreground">Key Differentiator</div>
+            <div className="text-center">
+              <span className="text-gradient font-bold">Abhivorn</span>
+            </div>
+            <div className="text-center text-muted-foreground">Agencies</div>
+            <div className="text-center text-muted-foreground">Tools</div>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[600px]">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left p-4 font-semibold text-foreground">Feature</th>
-                  <th className="p-4 font-semibold text-center">
-                    <span className="text-gradient">Abhivorn</span>
-                  </th>
-                  <th className="p-4 font-semibold text-center text-muted-foreground">Other Agencies</th>
-                  <th className="p-4 font-semibold text-center text-muted-foreground">DIY Tools</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((row, index) => (
-                  <tr
-                    key={row.feature}
-                    className={`border-b border-border/50 ${
-                      index % 2 === 0 ? 'bg-muted/20' : ''
-                    }`}
-                  >
-                    <td className="p-4 text-foreground font-medium">{row.feature}</td>
-                    <td className="p-4 text-center">
-                      <div className="flex justify-center">{renderValue(row.us)}</div>
-                    </td>
-                    <td className="p-4 text-center">
-                      <div className="flex justify-center">{renderValue(row.agencies)}</div>
-                    </td>
-                    <td className="p-4 text-center">
-                      <div className="flex justify-center">{renderValue(row.tools)}</div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+
+          {/* Table Rows */}
+          {comparisonData.map((row, index) => {
+            const IconComponent = row.icon;
+            return (
+              <div
+                key={row.feature}
+                className={`grid grid-cols-4 gap-4 p-4 md:p-6 items-center ${
+                  index !== comparisonData.length - 1 ? 'border-b border-border' : ''
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <IconComponent className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="font-medium text-foreground text-sm md:text-base">{row.feature}</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <StatusIcon status={row.pepper.status} />
+                  <span className="text-xs mt-1 text-muted-foreground hidden md:block">{row.pepper.text}</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <StatusIcon status={row.agencies.status} />
+                  <span className="text-xs mt-1 text-muted-foreground hidden md:block">{row.agencies.text}</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <StatusIcon status={row.tools.status} />
+                  <span className="text-xs mt-1 text-muted-foreground hidden md:block">{row.tools.text}</span>
+                </div>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

@@ -37,10 +37,10 @@ export const ContactForm = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="glass-card p-8 md:p-12 text-center"
+        className="card-elevated p-8 md:p-12 text-center"
       >
-        <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-8 h-8 text-green-400" />
+        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+          <CheckCircle className="w-8 h-8 text-green-600" />
         </div>
         <h3 className="text-2xl font-bold text-foreground mb-4">
           Thank You!
@@ -67,7 +67,7 @@ export const ContactForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       onSubmit={handleSubmit}
-      className="glass-card p-8 md:p-12"
+      className="card-elevated p-8 md:p-10"
     >
       <h3 className="text-2xl font-bold text-foreground mb-2">
         Get Your Free Audit
@@ -76,7 +76,7 @@ export const ContactForm = () => {
         Fill out the form below and we'll get back to you within 24 hours.
       </p>
 
-      <div className="space-y-6">
+      <div className="space-y-5">
         {/* Name Field */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -91,7 +91,7 @@ export const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full pl-12 pr-4 py-3 bg-muted border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
               placeholder="John Doe"
             />
           </div>
@@ -100,7 +100,7 @@ export const ContactForm = () => {
         {/* Email Field */}
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-            Email Address
+            Work Email
           </label>
           <div className="relative">
             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -111,8 +111,8 @@ export const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full pl-12 pr-4 py-3 bg-muted border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-              placeholder="john@example.com"
+              className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              placeholder="john@company.com"
             />
           </div>
         </div>
@@ -131,7 +131,7 @@ export const ContactForm = () => {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full pl-12 pr-4 py-3 bg-muted border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+              className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
               placeholder="Tell us about your project and goals..."
             />
           </div>
@@ -141,7 +141,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full btn-primary flex items-center justify-center gap-2 py-4 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full btn-primary justify-center py-4 disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isLoading ? (
             <>
@@ -155,6 +155,10 @@ export const ContactForm = () => {
             </>
           )}
         </button>
+
+        <p className="text-xs text-muted-foreground text-center">
+          By signing up you agree to our Terms of Service and Privacy Policy
+        </p>
       </div>
     </motion.form>
   );

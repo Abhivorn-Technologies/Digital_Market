@@ -1,65 +1,115 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Send, User, Mail, Building } from 'lucide-react';
 
 export const CTASection = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Demo request:', email);
+    setIsSubmitted(true);
+  };
+
   return (
-    <section className="section-padding relative overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
+    <section className="section-padding bg-gradient-to-br from-primary via-primary to-accent relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
+      </div>
 
       <div className="max-w-5xl mx-auto container-padding relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="glass-card p-8 md:p-16 text-center relative overflow-hidden"
-        >
-          {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-secondary/20 to-transparent rounded-full blur-2xl" />
-
-          <div className="relative">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-8"
-            >
-              <Zap className="w-8 h-8 text-primary-foreground" />
-            </motion.div>
-
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Ready to Transform{' '}
-              <span className="text-gradient">Your Business?</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
+              Ready to Transform Your Digital Growth?
             </h2>
-
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Let's build a strategy that delivers real results. Get your free digital 
-              marketing audit and discover how our integrated approach can drive 
-              measurable growth for your business.
+            <p className="text-lg text-primary-foreground/80 mb-8">
+              Schedule a free strategy session and discover how our integrated 
+              approach can drive measurable results for your business.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/contact"
-                className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4"
-              >
-                Schedule Free Strategy Session
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                to="/services"
-                className="btn-secondary inline-flex items-center gap-2 text-lg px-8 py-4"
-              >
-                Explore Services
-              </Link>
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                { value: '340%', label: 'Avg Traffic Growth' },
+                { value: '60%', label: 'Lower CPA' },
+                { value: '10x', label: 'Faster Delivery' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-foreground">{stat.value}</div>
+                  <div className="text-xs text-primary-foreground/70">{stat.label}</div>
+                </div>
+              ))}
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Right Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="card-elevated p-8"
+          >
+            <h3 className="text-xl font-bold text-foreground mb-2">Book a Demo</h3>
+            <p className="text-muted-foreground text-sm mb-6">Get your free digital marketing audit</p>
+
+            {isSubmitted ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                  <ArrowRight className="w-8 h-8 text-green-500" />
+                </div>
+                <p className="text-foreground font-medium">Thanks! We'll be in touch soon.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                    className="w-full pl-11 pr-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <input
+                    type="email"
+                    placeholder="Work Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full pl-11 pr-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div className="relative">
+                  <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    required
+                    className="w-full pl-11 pr-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <button type="submit" className="btn-primary w-full justify-center py-4">
+                  Submit
+                  <Send className="w-5 h-5" />
+                </button>
+                <p className="text-xs text-muted-foreground text-center">
+                  By signing up you agree to our Terms of Service and Privacy Policy
+                </p>
+              </form>
+            )}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

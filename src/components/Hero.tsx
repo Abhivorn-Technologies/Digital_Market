@@ -52,10 +52,10 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="relative">
+            <div className="relative z-10">
               {/* Main Image with decorative background */}
-              <div className="relative z-10">
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 to-amber-400/20 rounded-[2rem] blur-2xl" />
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 to-orange-400/20 rounded-[2rem] blur-2xl -z-10" />
                 <img
                   src={heroImage}
                   alt="Digital marketing professional"
@@ -68,7 +68,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute top-4 right-0 stat-badge"
+                className="absolute top-4 right-0 stat-badge z-20"
               >
                 <span className="text-secondary font-bold text-lg">10x</span>
                 <span className="text-sm text-muted-foreground">Faster<br />Content Velocity</span>
@@ -78,9 +78,9 @@ export const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute bottom-20 -right-4 stat-badge"
+                className="absolute bottom-20 -right-4 stat-badge z-20"
               >
-                <span className="text-amber-600 font-bold text-lg">+220%</span>
+                <span className="text-primary font-bold text-lg">+220%</span>
                 <span className="text-sm text-muted-foreground">Non-Branded<br />Pipeline Growth</span>
               </motion.div>
 
@@ -88,7 +88,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="absolute bottom-4 left-0 stat-badge bg-primary text-primary-foreground font-bold"
+                className="absolute bottom-4 left-0 stat-badge bg-primary text-primary-foreground font-bold z-20"
               >
                 <span className="text-sm font-bold">#1 Get Cited In AI Search</span>
               </motion.div>

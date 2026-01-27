@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 
 // Import service images
 import serviceSeo from '@/assets/service-seo.png';
@@ -18,6 +18,7 @@ const services = [
     cta: 'SCALE TRAFFIC',
     image: serviceSeo,
     color: 'from-blue-500/20 to-indigo-500/20',
+    features: ['SEO & AEO Optimization', 'Social Media Marketing', 'Digital PR & Influencer'],
   },
   {
     id: 'paid-media',
@@ -26,6 +27,7 @@ const services = [
     cta: 'DRIVE RESULTS',
     image: servicePaid,
     color: 'from-pink-500/20 to-rose-500/20',
+    features: ['Google & Meta Ads', 'Marketplace Advertising', 'Lead Generation'],
   },
   {
     id: 'data-analytics',
@@ -34,6 +36,7 @@ const services = [
     cta: 'GET INSIGHTS',
     image: serviceAnalytics,
     color: 'from-purple-500/20 to-violet-500/20',
+    features: ['GA4 Implementation', 'ROI Tracking', 'Conversion Optimization'],
   },
   {
     id: 'pre-sales',
@@ -42,6 +45,7 @@ const services = [
     cta: 'WIN DEALS',
     image: servicePresales,
     color: 'from-amber-500/20 to-orange-500/20',
+    features: ['Pitch Deck Design', 'Proposal Writing', 'Client Journey Mapping'],
   },
   {
     id: 'ai-creative',
@@ -50,6 +54,7 @@ const services = [
     cta: 'ELEVATE CREATIVE',
     image: serviceAi,
     color: 'from-cyan-500/20 to-blue-500/20',
+    features: ['AI-Powered Design', 'Brand-First Creative', 'Performance Content'],
   },
   {
     id: 'global-services',
@@ -58,8 +63,30 @@ const services = [
     cta: 'GO GLOBAL',
     image: serviceGlobal,
     color: 'from-emerald-500/20 to-teal-500/20',
+    features: ['International SEO', 'Multi-Market Campaigns', 'Cross-Border E-commerce'],
   },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export const ServicesSection = () => {
   return (
@@ -70,6 +97,7 @@ export const ServicesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="section-label justify-center mb-4">
@@ -85,49 +113,79 @@ export const ServicesSection = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Services Grid - Larger Cards with More Details */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-elevated card-hover overflow-hidden group"
+              variants={cardVariants}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="card-elevated overflow-hidden group cursor-pointer"
             >
-              {/* Image */}
-              <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${service.color}`}>
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Image - Larger */}
+                <div className={`relative h-64 lg:h-auto overflow-hidden bg-gradient-to-br ${service.color}`}>
+                  <motion.img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r" />
+                </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <Link
-                  to={`/services#${service.id}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors group/link"
-                >
-                  {service.cta}
-                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                </Link>
+                {/* Content - More Details */}
+                <div className="p-6 lg:p-8 flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+
+                  {/* Features List */}
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, fIndex) => (
+                      <motion.li
+                        key={fIndex}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 + fIndex * 0.05 }}
+                        className="flex items-center gap-2 text-sm text-muted-foreground"
+                      >
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                        {feature}
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    to={`/services#${service.id}`}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors group/link"
+                  >
+                    {service.cta}
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
           className="text-center mt-12"
         >
           <Link to="/contact" className="btn-primary">

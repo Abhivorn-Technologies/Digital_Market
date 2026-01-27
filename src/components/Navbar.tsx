@@ -40,7 +40,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
               <Zap className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors">

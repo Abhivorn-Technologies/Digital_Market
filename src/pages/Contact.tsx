@@ -1,35 +1,59 @@
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Clock, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Clock, MessageSquare, ArrowRight } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ContactForm } from '@/components/ContactForm';
+import { InteractiveMap } from '@/components/InteractiveMap';
 
 const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
     value: 'hello@abhivorn.com',
-    link: 'mailto:hello@abhivorn.com'
+    link: 'mailto:hello@abhivorn.com',
+    description: 'Send us an email anytime'
   },
   {
     icon: Phone,
     title: 'Phone',
     value: '+91 98765 43210',
-    link: 'tel:+919876543210'
+    link: 'tel:+919876543210',
+    description: 'Mon-Fri from 9am to 6pm IST'
   },
   {
-    icon: MapPin,
-    title: 'Office',
-    value: 'Mumbai, Maharashtra, India',
-    link: null
+    icon: MessageSquare,
+    title: 'WhatsApp',
+    value: '+91 98765 43210',
+    link: 'https://wa.me/919876543210',
+    description: 'Quick response within 1 hour'
   },
   {
     icon: Clock,
     title: 'Business Hours',
     value: 'Mon - Fri: 9AM - 6PM IST',
-    link: null
+    link: null,
+    description: 'Weekend support available'
   }
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
 
 const Contact = () => {
   return (
@@ -58,56 +82,52 @@ const Contact = () => {
                 </p>
 
                 {/* Contact Info Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                  {contactInfo.map((info, index) => {
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"
+                >
+                  {contactInfo.map((info) => {
                     const IconComponent = info.icon;
                     return (
                       <motion.div
                         key={info.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="card-elevated p-4"
+                        variants={itemVariants}
+                        whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                        className="card-elevated p-4 group cursor-pointer"
                       >
                         <div className="flex items-start gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <motion.div 
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                            className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
+                          >
                             <IconComponent className="w-5 h-5 text-primary" />
-                          </div>
+                          </motion.div>
                           <div>
-                            <h3 className="font-medium text-foreground text-sm mb-1">
+                            <h3 className="font-medium text-foreground text-sm mb-1 group-hover:text-primary transition-colors">
                               {info.title}
                             </h3>
                             {info.link ? (
                               <a
                                 href={info.link}
-                                className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                                className="text-muted-foreground text-sm hover:text-primary transition-colors block"
                               >
                                 {info.value}
                               </a>
                             ) : (
                               <p className="text-muted-foreground text-sm">{info.value}</p>
                             )}
+                            <p className="text-xs text-muted-foreground mt-1">{info.description}</p>
                           </div>
                         </div>
                       </motion.div>
                     );
                   })}
-                </div>
-
-                {/* Map Placeholder */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="card-elevated overflow-hidden"
-                >
-                  <div className="aspect-video bg-muted flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-10 h-10 text-primary mx-auto mb-2" />
-                      <p className="text-muted-foreground text-sm">Mumbai, India</p>
-                    </div>
-                  </div>
                 </motion.div>
+
+                {/* Interactive Map */}
+                <InteractiveMap />
               </motion.div>
 
               {/* Right Column - Form */}

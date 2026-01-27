@@ -13,11 +13,11 @@ export const CTASection = () => {
   };
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary via-primary to-accent relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-secondary via-secondary to-gray-900 relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto container-padding relative">
@@ -28,10 +28,10 @@ export const CTASection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to Transform Your Digital Growth?
             </h2>
-            <p className="text-lg text-primary-foreground/80 mb-8">
+            <p className="text-lg text-white/80 mb-8">
               Schedule a free strategy session and discover how our integrated 
               approach can drive measurable results for your business.
             </p>
@@ -43,9 +43,9 @@ export const CTASection = () => {
                 { value: '60%', label: 'Lower CPA' },
                 { value: '10x', label: 'Faster Delivery' },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-primary-foreground">{stat.value}</div>
-                  <div className="text-xs text-primary-foreground/70">{stat.label}</div>
+                <div key={stat.label} className="text-center bg-white/10 rounded-lg p-4">
+                  <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
+                  <div className="text-xs text-white/70">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -99,7 +99,7 @@ export const CTASection = () => {
                     className="w-full pl-11 pr-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
-                <button type="submit" className="btn-primary w-full justify-center py-4">
+                <button type="submit" className="btn-primary w-full justify-center py-4 text-primary-foreground font-bold">
                   Submit
                   <Send className="w-5 h-5" />
                 </button>

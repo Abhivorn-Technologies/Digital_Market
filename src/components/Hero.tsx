@@ -55,7 +55,7 @@ export const Hero = () => {
             <div className="relative">
               {/* Main Image with decorative background */}
               <div className="relative z-10">
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-[2rem] blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 to-amber-400/20 rounded-[2rem] blur-2xl" />
                 <img
                   src={heroImage}
                   alt="Digital marketing professional"
@@ -80,7 +80,7 @@ export const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className="absolute bottom-20 -right-4 stat-badge"
               >
-                <span className="text-primary font-bold text-lg">+220%</span>
+                <span className="text-amber-600 font-bold text-lg">+220%</span>
                 <span className="text-sm text-muted-foreground">Non-Branded<br />Pipeline Growth</span>
               </motion.div>
 
@@ -88,9 +88,9 @@ export const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="absolute bottom-4 left-0 stat-badge bg-primary text-primary-foreground"
+                className="absolute bottom-4 left-0 stat-badge bg-primary text-primary-foreground font-bold"
               >
-                <span className="text-sm font-medium">#1 Get Cited In AI Search</span>
+                <span className="text-sm font-bold">#1 Get Cited In AI Search</span>
               </motion.div>
             </div>
           </motion.div>

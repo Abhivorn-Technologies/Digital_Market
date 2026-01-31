@@ -28,8 +28,8 @@ const footerLinks = {
 const socialLinks = [
   { name: 'LinkedIn', icon: Linkedin, url: '#' },
   { name: 'Twitter', icon: Twitter, url: '#' },
-  { name: 'Instagram', icon: Instagram, url: '#' },
-  { name: 'Facebook', icon: Facebook, url: '#' },
+  { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/scalenowdigital?igsh=cGltNTV3c2EzNGcx&utm_source=qr' },
+  { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/share/1C7fg65NwY/?mibextid=wwXIfr' },
   { name: 'YouTube', icon: Youtube, url: '#' },
 ];
 

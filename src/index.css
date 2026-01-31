@@ -44,7 +44,7 @@
     --gradient-primary: linear-gradient(135deg, hsl(22 100% 50%) 0%, hsl(30 100% 45%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(22 100% 50%) 0%, hsl(15 100% 55%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(22 30% 97%) 0%, hsl(0 0% 100%) 100%);
-    
+
     --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
     --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.08);
     --shadow-lg: 0 8px 30px hsl(0 0% 0% / 0.1);
@@ -98,7 +98,12 @@
     font-family: 'Inter', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight text-foreground;
   }
 }
@@ -157,11 +162,24 @@
   }
 
   .nav-link {
-    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium;
+    @apply relative text-muted-foreground hover:text-foreground transition-all duration-300 font-medium py-1;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   .nav-link-active {
-    @apply text-foreground;
+    @apply text-foreground font-semibold;
+  }
+
+  .nav-link-active::after {
+    @apply w-full;
   }
 
   /* Section labels like "OUR SERVICES" */
@@ -189,8 +207,13 @@
   }
 
   @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   .logo-carousel:hover {
@@ -217,6 +240,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -227,15 +251,33 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
   }
 
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-  .stagger-6 { animation-delay: 0.6s; }
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+
+  .stagger-6 {
+    animation-delay: 0.6s;
+  }
 }

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import teamPhoto from '@/assets/team-photo.png';
+import founderPhoto from '@/assets/founder.png';
 
 const team = [
-  { name: 'Nikhil Sharma', role: 'Founder & CEO', specialty: 'Growth Strategy' },
+  { name: 'G.V.A SAI NIKHIL', role: 'Founder & CEO', specialty: 'Growth Strategy', image: founderPhoto },
 ];
 
 const containerVariants = {
@@ -54,71 +54,48 @@ export const TeamSection = () => {
           </p>
         </motion.div>
 
-        {/* Team Photo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative mb-16"
-        >
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/10 to-accent/20 rounded-3xl blur-2xl -z-10" />
-          <img
-            src={teamPhoto}
-            alt="Our expert team"
-            className="w-full rounded-2xl shadow-2xl object-cover max-h-[500px]"
-          />
 
-          {/* Floating Badge */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="absolute -bottom-6 right-8 bg-background/95 backdrop-blur-sm shadow-xl rounded-xl p-4 border border-border"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-2xl">🏆</span>
-              </div>
-              <div>
-                <p className="font-bold text-foreground">50+ Years Combined</p>
-                <p className="text-sm text-muted-foreground">Industry Experience</p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
 
         {/* Team Members Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="flex justify-center"
-        >
+        <div className="flex justify-center">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
-              variants={itemVariants}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="card-elevated p-6 text-center group cursor-pointer max-w-sm w-full"
+              initial="initial"
+              whileHover="hover"
+              className="flex flex-col items-center"
             >
               <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="w-20 h-20 rounded-full bg-gradient-to-br from-primary via-accent to-secondary flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-foreground shadow-lg"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/10 shadow-2xl cursor-pointer group"
               >
-                {member.name.split(' ').map(n => n[0]).join('')}
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                {member.name}
-              </h3>
-              <p className="text-sm text-primary font-medium mb-1">{member.role}</p>
-              <p className="text-xs text-muted-foreground">{member.specialty}</p>
+
+              <motion.div
+                variants={{
+                  initial: { opacity: 0, y: 10, height: 0 },
+                  hover: { opacity: 1, y: 0, height: 'auto' }
+                }}
+                transition={{ duration: 0.3 }}
+                className="text-center mt-6 overflow-hidden"
+              >
+                <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                  {member.name}
+                </h3>
+                <p className="text-lg text-primary font-medium mb-1">{member.role}</p>
+                <p className="text-sm text-muted-foreground">{member.specialty}</p>
+              </motion.div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

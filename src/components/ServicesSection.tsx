@@ -133,7 +133,7 @@ export const ServicesSection = () => {
             <span className="text-italic-bold text-gradient">Meet Your</span> Digital Growth Engine
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Scale Now digital replaces fragmented agency workflows with one unified engine for Content,
+            Scale Now Digital replaces fragmented agency workflows with one unified engine for Content,
             Creative, SEO, and Paid Media that drives predictable, compounding growth.
           </p>
         </motion.div>

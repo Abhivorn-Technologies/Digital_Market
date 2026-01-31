@@ -30,7 +30,7 @@ export const InteractiveMap = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Scale Now Office Location - Hyderabad, India"
+            title="Scale Now Digital Office Location - Hyderabad, India"
 
             className="w-full h-full"
           />
@@ -48,7 +48,7 @@ export const InteractiveMap = () => {
               <MapPin className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h4 className="font-bold text-foreground">Scale Now digital HQ</h4>
+              <h4 className="font-bold text-foreground">Scale Now Digital HQ</h4>
 
               <p className="text-xs text-muted-foreground">Hyderabad, India</p>
             </div>

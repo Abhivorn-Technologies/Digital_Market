@@ -64,13 +64,13 @@ export const WhyUsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="section-label justify-center mb-4">Scale Now digital vs Others</span>
+          <span className="section-label justify-center mb-4">Scale Now Digital vs Others</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Why Leading Brands{' '}
-            <span className="text-italic-bold text-gradient">Choose Scale Now digital</span>
+            <span className="text-italic-bold text-gradient">Choose Scale Now Digital</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Compare how Scale Now digital outperforms traditional agencies and tools with an
+            Compare how Scale Now Digital outperforms traditional agencies and tools with an
             AI-powered approach that unites strategy, technology, and talent.
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ export const WhyUsSection = () => {
           <div className="grid grid-cols-4 gap-4 p-4 md:p-6 bg-muted/50 border-b border-border font-semibold text-sm">
             <div className="text-foreground">Key Differentiator</div>
             <div className="text-center">
-              <span className="text-gradient font-bold">Scale Now digital</span>
+              <span className="text-gradient font-bold">Scale Now Digital</span>
             </div>
             <div className="text-center text-muted-foreground">Agencies</div>
             <div className="text-center text-muted-foreground">Tools</div>

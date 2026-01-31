@@ -46,7 +46,7 @@ export const Footer = () => {
                 <Zap className="w-6 h-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-background">
-                Scale Now digital
+                Scale Now Digital
 
               </span>
             </Link>
@@ -133,7 +133,7 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
             <p className="text-sm text-background/60">
-              © {new Date().getFullYear()} Scale Now digital. All rights reserved.
+              © {new Date().getFullYear()} Scale Now Digital. All rights reserved.
               <span className="mx-2">|</span>
               Developed by{' '}
               <a
@@ -142,7 +142,7 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors font-medium"
               >
-                Abhivorn technologies.pvt Ltd
+                Abhivorn Technologies.pvt Ltd
               </a>
             </p>
 

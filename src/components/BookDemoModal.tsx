@@ -80,7 +80,7 @@ export const BookDemoModal = () => {
                                     <form onSubmit={handleSubmit}>
                                         <h3 className="text-2xl font-bold text-foreground mb-2">Book a Demo</h3>
                                         <p className="text-muted-foreground mb-6">
-                                            See how Scale Now digital can accelerate your growth.
+                                            See how Scale Now Digital can accelerate your growth.
                                         </p>
 
                                         <div className="space-y-4">

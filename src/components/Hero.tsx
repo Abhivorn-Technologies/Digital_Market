@@ -26,7 +26,7 @@ export const Hero = () => {
               Scale your business 10x faster with data-driven insights, cutting-edge AI technology,
               and creative excellence.{' '}
               <span className="font-semibold text-foreground">
-                Scale Now digital combines world-class strategy, technology, and creative talent in one
+                Scale Now Digital combines world-class strategy, technology, and creative talent in one
                 powerful growth engine
               </span>{' '}
               to drive measurable results—from local markets to global expansion.

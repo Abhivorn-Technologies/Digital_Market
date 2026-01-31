@@ -46,7 +46,7 @@ export const Navbar = () => {
               <Zap className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-              Scale Now digital
+              Scale Now Digital
 
             </span>
           </Link>

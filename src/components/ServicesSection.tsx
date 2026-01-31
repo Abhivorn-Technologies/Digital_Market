@@ -9,8 +9,39 @@ import serviceAnalytics from '@/assets/service-analytics.png';
 import servicePresales from '@/assets/service-presales.png';
 import serviceAi from '@/assets/service-ai.png';
 import serviceGlobal from '@/assets/service-global.png';
+import serviceLeadGen from '@/assets/service-lead-gen.png';
+import serviceDigitalPr from '@/assets/service-digital-pr.png';
 
 const services = [
+  {
+    id: 'global-services',
+    title: 'Global Consulting',
+
+    description: 'Scale your brand across borders with international SEO, multi-market campaigns, and localization strategies. Navigate cultural nuances and regulatory requirements.',
+    cta: 'GO GLOBAL',
+    image: serviceGlobal,
+    color: 'from-emerald-500/20 to-teal-500/20',
+    features: ['International SEO', 'Multi-Market Campaigns', 'Cross-Border E-commerce'],
+  },
+  {
+    id: 'paid-media',
+    title: 'Performance Marketing / Paid Ads',
+
+    description: 'Drive immediate results with precision-targeted campaigns across Google Ads, Meta, marketplaces, and programmatic. Performance marketing that maximizes every dollar spent.',
+    cta: 'DRIVE RESULTS',
+    image: servicePaid,
+    color: 'from-pink-500/20 to-rose-500/20',
+    features: ['Google & Meta Ads', 'Marketplace Advertising'],
+  },
+  {
+    id: 'lead-generation',
+    title: 'Lead Generation',
+    description: 'Fill your pipeline with high-quality, qualified prospects through targeted strategies. We focus on delivering leads that convert into actual business revenue.',
+    cta: 'GENERATE LEADS',
+    image: serviceLeadGen,
+    color: 'from-orange-500/20 to-red-500/20',
+    features: ['B2B & B2C Strategies', 'Pipeline Acceleration', 'Quality Qualification'],
+  },
   {
     id: 'organic-media',
     title: 'SEO & Organic',
@@ -18,16 +49,16 @@ const services = [
     cta: 'SCALE TRAFFIC',
     image: serviceSeo,
     color: 'from-blue-500/20 to-indigo-500/20',
-    features: ['SEO & AEO Optimization', 'Social Media Marketing', 'Digital PR & Influencer'],
+    features: ['SEO & AEO Optimization', 'Social Media Marketing'],
   },
   {
-    id: 'paid-media',
-    title: 'Paid Media',
-    description: 'Drive immediate results with precision-targeted campaigns across Google Ads, Meta, marketplaces, and programmatic. Performance marketing that maximizes every dollar spent.',
-    cta: 'DRIVE RESULTS',
-    image: servicePaid,
-    color: 'from-pink-500/20 to-rose-500/20',
-    features: ['Google & Meta Ads', 'Marketplace Advertising', 'Lead Generation'],
+    id: 'digital-pr',
+    title: 'Digital PR & Influencer',
+    description: 'Amplify your brand\'s voice and credibility through strategic digital PR and authentic influencer partnerships. Connect with voices your audience trusts.',
+    cta: 'AMPLIFY BRAND',
+    image: serviceDigitalPr,
+    color: 'from-fuchsia-500/20 to-pink-600/20',
+    features: ['Digital PR Strategy', 'Influencer Marketing', 'Brand Reputation'],
   },
   {
     id: 'data-analytics',
@@ -39,15 +70,6 @@ const services = [
     features: ['GA4 Implementation', 'ROI Tracking', 'Conversion Optimization'],
   },
   {
-    id: 'pre-sales',
-    title: 'Pre-Sales Strategy',
-    description: 'Win more business with compelling pitch decks, proposals, and strategic sales support. Close deals before the competition knows what hit them.',
-    cta: 'WIN DEALS',
-    image: servicePresales,
-    color: 'from-amber-500/20 to-orange-500/20',
-    features: ['Pitch Deck Design', 'Proposal Writing', 'Client Journey Mapping'],
-  },
-  {
     id: 'ai-creative',
     title: 'AI Creative',
     description: 'High-end AI-driven creative that blends impactful storytelling with performance. We don\'t just make ads—we build creative systems that drive business results.',
@@ -57,13 +79,13 @@ const services = [
     features: ['AI-Powered Design', 'Brand-First Creative', 'Performance Content'],
   },
   {
-    id: 'global-services',
-    title: 'Global Services',
-    description: 'Scale your brand across borders with international SEO, multi-market campaigns, and localization strategies. Navigate cultural nuances and regulatory requirements.',
-    cta: 'GO GLOBAL',
-    image: serviceGlobal,
-    color: 'from-emerald-500/20 to-teal-500/20',
-    features: ['International SEO', 'Multi-Market Campaigns', 'Cross-Border E-commerce'],
+    id: 'pre-sales',
+    title: 'Pre-Sales Strategy',
+    description: 'Win more business with compelling pitch decks, proposals, and strategic sales support. Close deals before the competition knows what hit them.',
+    cta: 'WIN DEALS',
+    image: servicePresales,
+    color: 'from-amber-500/20 to-orange-500/20',
+    features: ['Pitch Deck Design', 'Proposal Writing', 'Client Journey Mapping'],
   },
 ];
 
@@ -88,7 +110,10 @@ const cardVariants = {
   },
 };
 
+import { useModal } from '@/context/ModalContext';
+
 export const ServicesSection = () => {
+  const { openModal } = useModal();
   return (
     <section className="section-padding bg-background">
       <div className="max-w-7xl mx-auto container-padding">
@@ -108,7 +133,7 @@ export const ServicesSection = () => {
             <span className="text-italic-bold text-gradient">Meet Your</span> Digital Growth Engine
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Abhivorn replaces fragmented agency workflows with one unified engine for Content, 
+            Scale Now digital replaces fragmented agency workflows with one unified engine for Content,
             Creative, SEO, and Paid Media that drives predictable, compounding growth.
           </p>
         </motion.div>
@@ -188,10 +213,10 @@ export const ServicesSection = () => {
           transition={{ delay: 0.3 }}
           className="text-center mt-12"
         >
-          <Link to="/contact" className="btn-primary">
+          <button onClick={openModal} className="btn-primary">
             BOOK A DEMO
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </button>
         </motion.div>
       </div>
     </section>

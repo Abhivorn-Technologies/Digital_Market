@@ -9,22 +9,22 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@abhivorn.com',
-    link: 'mailto:hello@abhivorn.com',
+    value: 'service@scalenowdigital.com',
+    link: 'mailto:service@scalenowdigital.com',
     description: 'Send us an email anytime'
   },
   {
     icon: Phone,
     title: 'Phone',
-    value: '+91 98765 43210',
-    link: 'tel:+919876543210',
+    value: '+91 99631 41996',
+    link: 'tel:9963141996',
     description: 'Mon-Fri from 9am to 6pm IST'
   },
   {
     icon: MessageSquare,
     title: 'WhatsApp',
-    value: '+91 98765 43210',
-    link: 'https://wa.me/919876543210',
+    value: '+91 99631 41996',
+    link: 'https://wa.me/919963141996',
     description: 'Quick response within 1 hour'
   },
   {
@@ -76,8 +76,8 @@ const Contact = () => {
                   <span className="text-italic-bold text-gradient">Growth Journey</span>
                 </h1>
                 <p className="text-lg text-muted-foreground mb-10">
-                  Ready to transform your digital presence? Schedule a free strategy 
-                  session and discover how our integrated approach can drive measurable 
+                  Ready to transform your digital presence? Schedule a free strategy
+                  session and discover how our integrated approach can drive measurable
                   growth for your business.
                 </p>
 
@@ -98,7 +98,7 @@ const Contact = () => {
                         className="card-elevated p-4 group cursor-pointer"
                       >
                         <div className="flex items-start gap-3">
-                          <motion.div 
+                          <motion.div
                             whileHover={{ scale: 1.1, rotate: 5 }}
                             className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
                           >

@@ -26,7 +26,7 @@ export const TestimonialsSection = () => {
         >
           <span className="section-label justify-center mb-4">Case Studies</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Abhivorn in{' '}
+            Scale Now digital in{' '}
             <span className="text-italic-bold text-gradient">Action</span>
           </h2>
         </motion.div>
@@ -105,11 +105,10 @@ export const TestimonialsSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex
+                  className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
                       ? 'w-8 bg-primary'
                       : 'w-2 bg-border hover:bg-muted-foreground'
-                  }`}
+                    }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}

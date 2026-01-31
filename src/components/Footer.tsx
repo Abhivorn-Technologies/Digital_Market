@@ -3,16 +3,18 @@ import { Zap, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook, Youtu
 
 const footerLinks = {
   solutions: [
+    { name: 'Global Consulting', path: '/services#global-services' },
+    { name: 'Performance Marketing', path: '/services#paid-media' },
+    { name: 'Lead Generation', path: '/services#lead-generation' },
     { name: 'SEO & Organic', path: '/services#organic-media' },
-    { name: 'Paid Media', path: '/services#paid-media' },
+    { name: 'Digital PR & Influencer', path: '/services#digital-pr' },
     { name: 'Data & Analytics', path: '/services#data-analytics' },
     { name: 'AI Creative', path: '/services#ai-creative' },
-    { name: 'Global Services', path: '/services#global-services' },
+    { name: 'Pre-Sales Strategy', path: '/services#pre-sales' },
   ],
   company: [
     { name: 'About Us', path: '/about' },
     { name: 'Our Team', path: '/about#team' },
-    { name: 'Careers', path: '/about#careers' },
     { name: 'Contact', path: '/contact' },
   ],
   resources: [
@@ -44,31 +46,32 @@ export const Footer = () => {
                 <Zap className="w-6 h-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-background">
-                abhivorn
+                Scale Now digital
+
               </span>
             </Link>
             <p className="text-background/70 mb-6 max-w-sm">
-              Transforming digital presence into global growth. Your partner in 
+              Transforming digital presence into global growth. Your partner in
               data-driven digital marketing that delivers measurable ROI.
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:hello@abhivorn.com"
+                href="mailto:service@scalenowdigital.com"
                 className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                hello@abhivorn.com
+                service@scalenowdigital.com
               </a>
               <a
-                href="tel:+919876543210"
+                href="tel:9963141996"
                 className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +91 98765 43210
+                +91 99631 41996
               </a>
               <div className="flex items-center gap-3 text-background/70">
                 <MapPin className="w-4 h-4" />
-                Mumbai, India
+                Hyderabad, India
               </div>
             </div>
           </div>
@@ -130,7 +133,17 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
             <p className="text-sm text-background/60">
-              © {new Date().getFullYear()} Abhivorn Digital Growth. All rights reserved.
+              © {new Date().getFullYear()} Scale Now digital. All rights reserved.
+              <span className="mx-2">|</span>
+              Developed by{' '}
+              <a
+                href="https://www.abhivorn.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors font-medium"
+              >
+                Abhivorn technologies.pvt Ltd
+              </a>
             </p>
 
             {/* Social Links */}

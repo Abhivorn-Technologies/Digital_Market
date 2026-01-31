@@ -1,16 +1,14 @@
 import { motion } from 'framer-motion';
+import abhivornLogo from '@/assets/Abhivorn.png';
+import costitaLogo from '@/assets/Costita Logo PNG.png';
+import nextgenLogo from '@/assets/nextgen.jpeg';
+import elevateLogo from '@/assets/elevaterrotz.png';
 
 const clients = [
-  { name: 'Amazon', initial: 'A' },
-  { name: 'Google', initial: 'G' },
-  { name: 'Meta', initial: 'M' },
-  { name: 'Shopify', initial: 'S' },
-  { name: 'Hubspot', initial: 'H' },
-  { name: 'Salesforce', initial: 'SF' },
-  { name: 'Adobe', initial: 'Ad' },
-  { name: 'Microsoft', initial: 'MS' },
-  { name: 'Stripe', initial: 'St' },
-  { name: 'Slack', initial: 'Sl' },
+  { name: 'Abhivorn Technologies', logo: abhivornLogo, initial: 'AT' },
+  { name: 'Costita', logo: costitaLogo, initial: 'C' },
+  { name: 'Next Gen Hiring', logo: nextgenLogo, initial: 'NGH' },
+  { name: 'Elevate rrotz', logo: elevateLogo, initial: 'ER' },
 ];
 
 export const ClientLogos = () => {
@@ -27,24 +25,37 @@ export const ClientLogos = () => {
           <span className="section-label justify-center mb-4">Our Clients</span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
             Driving content-led growth for{' '}
-            <span className="text-italic-bold text-gradient">500+ industry leaders</span>
+            <span className="text-italic-bold text-gradient">Industry Leaders</span>
           </h2>
         </motion.div>
 
         {/* Logo Carousel */}
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-16 animate-scroll">
-            {[...clients, ...clients].map((client, index) => (
+          <div className="flex items-center gap-12 animate-scroll">
+            {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="flex-shrink-0 flex items-center justify-center h-12 w-32 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                className="flex-shrink-0 flex items-center justify-center h-12 w-40 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
               >
-                <div className="flex items-center gap-2 text-xl font-bold text-muted-foreground">
-                  <span className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-sm">
-                    {client.initial}
-                  </span>
-                  <span className="hidden sm:inline">{client.name}</span>
-                </div>
+                {client.logo ? (
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 flex-shrink-0">
+                      <img
+                        src={client.logo}
+                        alt={client.name}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <span className="font-bold text-muted-foreground whitespace-nowrap">{client.name}</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 text-xl font-bold text-muted-foreground">
+                    <span className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-sm">
+                      {client.initial}
+                    </span>
+                    <span className="whitespace-nowrap">{client.name}</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>

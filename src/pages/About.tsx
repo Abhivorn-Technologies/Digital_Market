@@ -39,9 +39,6 @@ const values = [
 
 const team = [
   { name: 'Nikhil Sharma', role: 'Founder & CEO', initial: 'NS' },
-  { name: 'Priya Verma', role: 'Head of Strategy', initial: 'PV' },
-  { name: 'Rahul Kumar', role: 'Technical Director', initial: 'RK' },
-  { name: 'Ananya Singh', role: 'Creative Director', initial: 'AS' },
 ];
 
 const About = () => {
@@ -64,9 +61,9 @@ const About = () => {
                 <span className="text-italic-bold text-gradient">Digital Growth</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                We're not your typical digital marketing agency. We're strategic partners 
-                who understand that in today's interconnected world, success requires more 
-                than just running ads or posting on social media—it demands an integrated 
+                We're not your typical digital marketing agency. We're strategic partners
+                who understand that in today's interconnected world, success requires more
+                than just running ads or posting on social media—it demands an integrated
                 approach that turns every digital touchpoint into a growth opportunity.
               </p>
             </motion.div>
@@ -88,23 +85,23 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Founded on the principle that data, creativity, and technology should 
-                    work in harmony, we've built a team of specialists across SEO, paid media, 
+                    Founded on the principle that data, creativity, and technology should
+                    work in harmony, we've built a team of specialists across SEO, paid media,
                     e-commerce, analytics, AI-powered creative, and global marketing.
                   </p>
                   <p>
-                    Whether you're a local business looking to dominate your market or an 
-                    established brand expanding across borders, we have the expertise and 
+                    Whether you're a local business looking to dominate your market or an
+                    established brand expanding across borders, we have the expertise and
                     resources to accelerate your growth.
                   </p>
                   <p>
-                    Our approach is simple: understand your business deeply, develop strategies 
-                    that align with your goals, execute with precision, and continuously optimise 
+                    Our approach is simple: understand your business deeply, develop strategies
+                    that align with your goals, execute with precision, and continuously optimise
                     based on real data. We don't believe in one-size-fits-all solutions.
                   </p>
                   <p>
-                    From optimising your website for generative AI search engines to launching 
-                    D2C brands, from managing multi-country campaigns to building AI-powered 
+                    From optimising your website for generative AI search engines to launching
+                    D2C brands, from managing multi-country campaigns to building AI-powered
                     creative systems, we're at the forefront of digital marketing innovation.
                   </p>
                 </div>
@@ -119,14 +116,14 @@ const About = () => {
               >
                 <h3 className="text-xl font-bold text-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground mb-8">
-                  To empower businesses of every size to achieve exponential growth through 
-                  innovative, data-driven digital marketing strategies that connect brands 
+                  To empower businesses of every size to achieve exponential growth through
+                  innovative, data-driven digital marketing strategies that connect brands
                   with customers across every channel and market.
                 </p>
                 <h3 className="text-xl font-bold text-foreground mb-4">Our Vision</h3>
                 <p className="text-muted-foreground">
-                  To be the global standard for integrated digital marketing excellence 
-                  where technology, creativity, and strategy converge to create unprecedented 
+                  To be the global standard for integrated digital marketing excellence
+                  where technology, creativity, and strategy converge to create unprecedented
                   business growth.
                 </p>
               </motion.div>
@@ -186,11 +183,11 @@ const About = () => {
             >
               <span className="section-label justify-center mb-4">Our Team</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-                Meet the Experts
+                Meet the Founder
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex justify-center">
               {team.map((member, index) => (
                 <motion.div
                   key={member.name}
@@ -198,7 +195,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="card-elevated p-6 text-center card-hover"
+                  className="card-elevated p-6 text-center card-hover max-w-sm w-full"
                 >
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-foreground">
                     {member.initial}

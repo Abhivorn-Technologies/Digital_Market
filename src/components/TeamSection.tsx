@@ -3,9 +3,6 @@ import teamPhoto from '@/assets/team-photo.png';
 
 const team = [
   { name: 'Nikhil Sharma', role: 'Founder & CEO', specialty: 'Growth Strategy' },
-  { name: 'Priya Verma', role: 'Head of Strategy', specialty: 'Brand Development' },
-  { name: 'Rahul Kumar', role: 'Technical Director', specialty: 'MarTech & Analytics' },
-  { name: 'Ananya Singh', role: 'Creative Director', specialty: 'AI-Powered Creative' },
 ];
 
 const containerVariants = {
@@ -50,10 +47,10 @@ export const TeamSection = () => {
             Our Team
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Meet the <span className="text-italic-bold text-gradient">Growth Architects</span>
+            Meet the <span className="text-italic-bold text-gradient">Founder</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A team of passionate experts dedicated to transforming your digital presence
+            The visionary lead dedicated to transforming your digital presence with AI-driven strategy
           </p>
         </motion.div>
 
@@ -71,7 +68,7 @@ export const TeamSection = () => {
             alt="Our expert team"
             className="w-full rounded-2xl shadow-2xl object-cover max-h-[500px]"
           />
-          
+
           {/* Floating Badge */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -98,14 +95,14 @@ export const TeamSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="flex justify-center"
         >
           {team.map((member, index) => (
             <motion.div
               key={member.name}
               variants={itemVariants}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="card-elevated p-6 text-center group cursor-pointer"
+              className="card-elevated p-6 text-center group cursor-pointer max-w-sm w-full"
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}

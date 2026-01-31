@@ -10,7 +10,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "Abhivorn Digital Growth transformed our entire digital strategy. Within 6 months, our organic traffic increased by 340% and our cost per acquisition dropped by 60%. Their integrated approach truly delivers.",
+    quote: "Scale Now Digital transformed our entire digital strategy. Within 6 months, our organic traffic increased by 340% and our cost per acquisition dropped by 60%. Their integrated approach truly delivers.",
     author: "Priya Sharma",
     role: "CEO",
     company: "TechStart India"

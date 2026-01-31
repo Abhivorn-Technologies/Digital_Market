@@ -1,4 +1,4 @@
-import { Search, TrendingUp, BarChart3, Presentation, Sparkles, Globe } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Presentation, Sparkles, Globe, Target } from 'lucide-react';
 
 export interface Service {
   id: string;
@@ -11,6 +11,48 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: 'global-services',
+    title: 'Global Consulting',
+
+    shortDesc: 'Expand your brand internationally with localised strategies and multi-market campaign expertise',
+    description: 'Scale your brand across borders and markets with comprehensive marketing solutions designed for global growth.',
+    icon: 'Globe',
+    features: [
+      'Global SEO & International Search Strategy - Dominate search across multiple countries',
+      'International Paid Media Campaigns - Platform-specific strategies for each market',
+      'Multi-Language Campaign Management - Navigate cultural nuances effectively',
+      'Cross-Border E-commerce Setup - Technical implementation for global selling'
+    ]
+  },
+  {
+    id: 'paid-media',
+    title: 'Performance Marketing / Paid Ads',
+
+    shortDesc: 'Generate immediate results with performance-driven campaigns across Google, Meta, and marketplaces',
+    description: 'Drive immediate results and scalable growth through precision-targeted paid campaigns across multiple platforms.',
+    icon: 'TrendingUp',
+    features: [
+      'Performance Marketing - Results-obsessed campaign management',
+      'PPC (Pay-Per-Click) - Capture high-intent traffic with expertly managed campaigns',
+      'Meta Ads - Reach ideal customers on Facebook and Instagram',
+      'Google Ads - Dominate Search, Display, Shopping, YouTube, and Performance Max',
+      'Marketplace Ads - Strategic advertising on Amazon, Myntra, Nykaa, Ajio'
+    ]
+  },
+  {
+    id: 'lead-generation',
+    title: 'Lead Generation',
+    shortDesc: 'Fill your pipeline with high-quality, qualified prospects through targeted acquisition strategies',
+    description: 'Comprehensive lead generation strategies designed to identify, attract, and qualify high-value prospects for your business.',
+    icon: 'Target',
+    features: [
+      'B2B & B2C Lead Gen - Tailored strategies for your target market',
+      'Account-Based Marketing (ABM) - Target high-value accounts with precision',
+      'Pipeline Acceleration - Move leads through your sales funnel faster',
+      'Lead Qualification - Ensure your sales team focuses on ready-to-buy prospects'
+    ]
+  },
+  {
     id: 'organic-media',
     title: 'Organic Media',
     shortDesc: 'Drive sustainable traffic and authority through SEO, AEO, GEO, social media, and influencer partnerships',
@@ -20,25 +62,23 @@ export const services: Service[] = [
       'SEO (Search Engine Optimisation) - Dominate search results with comprehensive optimisation strategies',
       'AEO (Answer Engine Optimisation) - Position your brand as the definitive answer to customer questions',
       'GEO (Generative Engine Optimisation) - Stay ahead with AI-driven search experience optimisation',
-      'Social Media Marketing - Build engaged communities and drive conversions',
+      'Social Media Managing - Build engaged communities and drive conversions',
       'Digital PR - Amplify your brand\'s voice and credibility',
       'Influencer Marketing - Connect with authentic voices your audience trusts',
       'Email & WhatsApp Marketing - Nurture relationships through personalised messaging'
     ]
   },
   {
-    id: 'paid-media',
-    title: 'Paid Ads',
-    shortDesc: 'Generate immediate results with performance-driven campaigns across Google, Meta, and marketplaces',
-    description: 'Drive immediate results and scalable growth through precision-targeted paid campaigns across multiple platforms.',
-    icon: 'TrendingUp',
+    id: 'digital-pr',
+    title: 'Digital PR & Influencer',
+    shortDesc: 'Amplify your brand\'s voice and credibility through strategic digital PR and authentic influencer partnerships.',
+    description: 'Build brand authority and trust through strategic storytelling, media relations, and authentic influencer collaborations that connect with your audience.',
+    icon: 'Sparkles',
     features: [
-      'Performance Marketing - Results-obsessed campaign management',
-      'PPC (Pay-Per-Click) - Capture high-intent traffic with expertly managed campaigns',
-      'Lead Generation - Fill your pipeline with qualified prospects',
-      'Meta Ads - Reach ideal customers on Facebook and Instagram',
-      'Google Ads - Dominate Search, Display, Shopping, YouTube, and Performance Max',
-      'Marketplace Ads - Strategic advertising on Amazon, Myntra, Nykaa, Ajio'
+      'Digital PR Strategy - Build relationships with key media outlets',
+      'Influencer Marketing - Connect with authentic voices your audience trusts',
+      'Brand Reputation - Manage and enhance your online presence',
+      'Crisis Management - Strategic communication during critical times'
     ]
   },
   {
@@ -56,19 +96,6 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 'pre-sales',
-    title: 'Pre-Sales Strategy',
-    shortDesc: 'Win more deals with compelling pitch decks, proposals, and strategic sales support',
-    description: 'Win more business with presentations and proposals that close deals before the competition knows what hit them.',
-    icon: 'Presentation',
-    features: [
-      'Pre-Sales Planning & Support - Strategic planning from first contact to contract',
-      'Pitch Deck Design - Compelling visual storytelling that captivates',
-      'Proposal Writing - Persuasive proposals that position you as the obvious choice',
-      'Client Journey Mapping - Optimise every touchpoint in the decision-making process'
-    ]
-  },
-  {
     id: 'ai-creative',
     title: 'AI Creative Media',
     shortDesc: 'Leverage generative AI to produce high-impact creative at scale while maintaining brand consistency',
@@ -82,16 +109,16 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 'global-services',
-    title: 'Global Services',
-    shortDesc: 'Expand your brand internationally with localised strategies and multi-market campaign expertise',
-    description: 'Scale your brand across borders and markets with comprehensive marketing solutions designed for global growth.',
-    icon: 'Globe',
+    id: 'pre-sales',
+    title: 'Pre-Sales Strategy',
+    shortDesc: 'Win more deals with compelling pitch decks, proposals, and strategic sales support',
+    description: 'Win more business with presentations and proposals that close deals before the competition knows what hit them.',
+    icon: 'Presentation',
     features: [
-      'Global SEO & International Search Strategy - Dominate search across multiple countries',
-      'International Paid Media Campaigns - Platform-specific strategies for each market',
-      'Multi-Language Campaign Management - Navigate cultural nuances effectively',
-      'Cross-Border E-commerce Setup - Technical implementation for global selling'
+      'Pre-Sales Planning & Support - Strategic planning from first contact to contract',
+      'Pitch Deck Design - Compelling visual storytelling that captivates',
+      'Proposal Writing - Persuasive proposals that position you as the obvious choice',
+      'Client Journey Mapping - Optimise every touchpoint in the decision-making process'
     ]
   }
 ];

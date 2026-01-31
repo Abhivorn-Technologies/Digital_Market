@@ -11,10 +11,13 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
+import { useModal } from '@/context/ModalContext';
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { openModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +33,10 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-sm border-b border-border'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-background/95 backdrop-blur-md shadow-sm border-b border-border'
+        : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -44,7 +46,8 @@ export const Navbar = () => {
               <Zap className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-              abhivorn
+              Scale Now Digital
+
             </span>
           </Link>
 
@@ -54,9 +57,13 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`nav-link ${
-                  location.pathname === link.path ? 'nav-link-active' : ''
-                }`}
+                onClick={() => {
+                  if (location.pathname === link.path) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+                className={`nav-link ${location.pathname === link.path ? 'nav-link-active' : ''
+                  }`}
               >
                 {link.name}
               </Link>
@@ -65,13 +72,12 @@ export const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/contact" className="btn-secondary py-2.5 px-5">
-              Login
-            </Link>
-            <Link to="/contact" className="btn-primary py-2.5 px-5">
+
+            <button onClick={openModal} className="btn-primary py-2.5 px-5">
               Book a Demo
-            </Link>
+            </button>
           </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -99,28 +105,32 @@ export const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`block py-3 px-4 rounded-lg transition-colors font-medium ${
-                    location.pathname === link.path
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                  onClick={() => {
+                    if (location.pathname === link.path) {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                    setIsOpen(false);
+                  }}
+                  className={`block py-3 px-4 rounded-lg transition-colors font-medium ${location.pathname === link.path
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Link
-                  to="/contact"
-                  className="btn-secondary block text-center w-full"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/contact"
+
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    openModal();
+                  }}
                   className="btn-primary block text-center w-full"
                 >
                   Book a Demo
-                </Link>
+                </button>
+
               </div>
             </div>
           </motion.div>

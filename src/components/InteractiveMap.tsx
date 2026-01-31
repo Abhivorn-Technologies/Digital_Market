@@ -2,13 +2,13 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
 
 export const InteractiveMap = () => {
-  // Mumbai coordinates for Google Maps embed
-  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995!3d19.08219865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1706000000000!5m2!1sen!2sin";
+  // Hyderabad coordinates for Google Maps embed
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.31604084!2d78.26795905!3d17.4122998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1706000000000!5m2!1sen!2sin";
 
   const officeInfo = [
-    { icon: MapPin, label: 'Address', value: 'Bandra Kurla Complex, Mumbai, Maharashtra 400051, India' },
-    { icon: Phone, label: 'Phone', value: '+91 98765 43210', link: 'tel:+919876543210' },
-    { icon: Mail, label: 'Email', value: 'hello@abhivorn.com', link: 'mailto:hello@abhivorn.com' },
+    { icon: MapPin, label: 'Address', value: 'Madhapur, Hyderabad, Telangana 500081, India' },
+    { icon: Phone, label: 'Phone', value: '+91 99631 41996', link: 'tel:9963141996' },
+    { icon: Mail, label: 'Email', value: 'service@scalenowdigital.com', link: 'mailto:service@scalenowdigital.com' },
     { icon: Clock, label: 'Hours', value: 'Mon - Fri: 9:00 AM - 6:00 PM IST' },
   ];
 
@@ -30,11 +30,12 @@ export const InteractiveMap = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Abhivorn Office Location - Mumbai, India"
+            title="Scale Now Digital Office Location - Hyderabad, India"
+
             className="w-full h-full"
           />
         </div>
-        
+
         {/* Map Overlay with Office Info */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -47,11 +48,12 @@ export const InteractiveMap = () => {
               <MapPin className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h4 className="font-bold text-foreground">Abhivorn HQ</h4>
-              <p className="text-xs text-muted-foreground">Mumbai, India</p>
+              <h4 className="font-bold text-foreground">Scale Now Digital HQ</h4>
+
+              <p className="text-xs text-muted-foreground">Hyderabad, India</p>
             </div>
           </div>
-          
+
           <div className="space-y-2">
             {officeInfo.map((info, index) => {
               const IconComponent = info.icon;
@@ -84,7 +86,7 @@ export const InteractiveMap = () => {
 
           {/* Get Directions Link */}
           <motion.a
-            href="https://maps.google.com/?q=Mumbai,Maharashtra,India"
+            href="https://maps.google.com/?q=Hyderabad,Telangana,India"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
@@ -108,10 +110,10 @@ export const InteractiveMap = () => {
             <span className="text-sm text-foreground font-medium">9:00 AM - 6:00 PM IST</span>
           </div>
           <a
-            href="tel:+919876543210"
+            href="tel:9963141996"
             className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
           >
-            Call us: +91 98765 43210
+            Call us: +91 99631 41996
           </a>
         </div>
       </div>

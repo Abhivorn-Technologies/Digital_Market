@@ -33,13 +33,16 @@ export const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
-              <button onClick={openModal} className="btn-primary text-base px-8 py-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+              <button
+                onClick={openModal}
+                className="btn-primary w-full sm:w-auto text-base px-8 py-4"
+              >
                 BOOK A DEMO
               </button>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 text-base font-semibold text-foreground hover:text-primary transition-colors group"
+                className="btn-outline w-full sm:w-auto text-base px-8 py-4 inline-flex items-center justify-center gap-2 group border-2"
               >
                 CASE STUDIES
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

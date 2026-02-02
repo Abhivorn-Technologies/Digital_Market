@@ -24,7 +24,7 @@ export const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="section-label justify-center mb-4">Case Studies</span>
+          <span className="section-label justify-center mb-4">Client Reviews</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             Scale Now Digital in{' '}
             <span className="text-italic-bold text-gradient">Action</span>

@@ -65,7 +65,7 @@ export const WhyUsSection = () => {
           className="text-center mb-16"
         >
           <span className="section-label justify-center mb-4">Scale Now Digital vs Others</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-snug mb-4">
             Why Leading Brands{' '}
             <span className="text-italic-bold text-gradient">Choose Scale Now Digital</span>
           </h2>
@@ -83,13 +83,13 @@ export const WhyUsSection = () => {
           className="card-elevated overflow-hidden"
         >
           {/* Table Header */}
-          <div className="grid grid-cols-4 gap-4 p-4 md:p-6 bg-muted/50 border-b border-border font-semibold text-sm">
-            <div className="text-foreground">Key Differentiator</div>
-            <div className="text-center">
-              <span className="text-gradient font-bold">Scale Now Digital</span>
+          <div className="grid grid-cols-[35%_22%_22%_21%] md:grid-cols-4 gap-1 md:gap-4 p-3 md:p-6 bg-muted/50 border-b border-border font-semibold text-[10px] md:text-sm">
+            <div className="text-foreground flex items-center">Key Differentiator</div>
+            <div className="text-center flex items-center justify-center">
+              <span className="text-gradient font-bold text-[10px] md:text-sm leading-tight">Scale Now Digital</span>
             </div>
-            <div className="text-center text-muted-foreground">Agencies</div>
-            <div className="text-center text-muted-foreground">Tools</div>
+            <div className="text-center text-muted-foreground flex items-center justify-center">Agencies</div>
+            <div className="text-center text-muted-foreground flex items-center justify-center">Tools</div>
           </div>
 
           {/* Table Rows */}
@@ -98,24 +98,24 @@ export const WhyUsSection = () => {
             return (
               <div
                 key={row.feature}
-                className={`grid grid-cols-4 gap-4 p-4 md:p-6 items-center ${index !== comparisonData.length - 1 ? 'border-b border-border' : ''
+                className={`grid grid-cols-[35%_22%_22%_21%] md:grid-cols-4 gap-1 md:gap-4 p-3 md:p-6 items-center ${index !== comparisonData.length - 1 ? 'border-b border-border' : ''
                   }`}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <IconComponent className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <IconComponent className="w-3.5 h-3.5 md:w-5 md:h-5 text-primary" />
                   </div>
-                  <span className="font-medium text-foreground text-sm md:text-base">{row.feature}</span>
+                  <span className="font-medium text-foreground text-[10px] md:text-base leading-tight">{row.feature}</span>
                 </div>
-                <div className="flex flex-col items-center text-center">
+                <div className="flex flex-col items-center text-center justify-center">
                   <StatusIcon status={row.pepper.status} />
                   <span className="text-xs mt-1 text-muted-foreground hidden md:block">{row.pepper.text}</span>
                 </div>
-                <div className="flex flex-col items-center text-center">
+                <div className="flex flex-col items-center text-center justify-center">
                   <StatusIcon status={row.agencies.status} />
                   <span className="text-xs mt-1 text-muted-foreground hidden md:block">{row.agencies.text}</span>
                 </div>
-                <div className="flex flex-col items-center text-center">
+                <div className="flex flex-col items-center text-center justify-center">
                   <StatusIcon status={row.tools.status} />
                   <span className="text-xs mt-1 text-muted-foreground hidden md:block">{row.tools.text}</span>
                 </div>

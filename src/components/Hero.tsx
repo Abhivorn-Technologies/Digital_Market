@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import heroImage from '@/assets/hero-image.png';
+import heroImage from '@/assets/founder.png';
 import { useModal } from '@/context/ModalContext';
 
 export const Hero = () => {
@@ -17,7 +17,7 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="order-2 lg:order-1"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] font-bold leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] font-bold leading-snug mb-6">
               <span className="text-foreground">Digital Growth for the </span>
               <span className="text-italic-bold text-gradient">AI Age</span>
             </h1>
@@ -38,15 +38,15 @@ export const Hero = () => {
                 onClick={openModal}
                 className="btn-primary w-full sm:w-auto text-base px-8 py-4"
               >
-                BOOK A DEMO
+                BOOK FREE CONSULTATION
               </button>
-              <Link
+              {/* <Link
                 to="/services"
                 className="btn-outline w-full sm:w-auto text-base px-8 py-4 inline-flex items-center justify-center gap-2 group border-2"
               >
                 CASE STUDIES
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
 
@@ -64,7 +64,7 @@ export const Hero = () => {
                 <img
                   src={heroImage}
                   alt="Digital marketing professional"
-                  className="relative rounded-2xl w-full max-w-lg mx-auto shadow-xl"
+                  className="relative rounded-2xl w-full max-w-md mx-auto shadow-xl"
                 />
               </div>
 

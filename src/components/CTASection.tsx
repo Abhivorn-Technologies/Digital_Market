@@ -32,7 +32,7 @@ export const CTASection = () => {
               Ready to Transform Your Digital Growth?
             </h2>
             <p className="text-lg text-white/80 mb-8">
-              Schedule a free strategy session and discover how our integrated 
+              Schedule a free strategy session and discover how our integrated
               approach can drive measurable results for your business.
             </p>
 
@@ -58,7 +58,7 @@ export const CTASection = () => {
             viewport={{ once: true }}
             className="card-elevated p-8"
           >
-            <h3 className="text-xl font-bold text-foreground mb-2">Book a Demo</h3>
+            <h3 className="text-xl font-bold text-foreground mb-2">Book Free Consultation</h3>
             <p className="text-muted-foreground text-sm mb-6">Get your free digital marketing audit</p>
 
             {isSubmitted ? (

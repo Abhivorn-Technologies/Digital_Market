@@ -71,7 +71,7 @@ const Contact = () => {
                 transition={{ duration: 0.5 }}
               >
                 <span className="section-label mb-4">Contact Us</span>
-                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-snug mb-6">
                   Let's Start Your{' '}
                   <span className="text-italic-bold text-gradient">Growth Journey</span>
                 </h1>

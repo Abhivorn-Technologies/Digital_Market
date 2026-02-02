@@ -47,13 +47,13 @@ const Services = () => {
               className="text-center max-w-3xl mx-auto"
             >
               <span className="section-label justify-center mb-4">Our Services</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-snug mb-6">
                 Transform Your Digital Presence{' '}
                 <span className="text-italic-bold text-gradient">Into Revenue</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                We don't just offer services—we architect growth. Our integrated approach 
-                combines cutting-edge technology, data-driven insights, and creative excellence 
+                We don't just offer services—we architect growth. Our integrated approach
+                combines cutting-edge technology, data-driven insights, and creative excellence
                 to deliver measurable results that matter to your bottom line.
               </p>
             </motion.div>
@@ -84,7 +84,7 @@ const Services = () => {
                       <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                         <IconComponent className="w-7 h-7 text-primary" />
                       </div>
-                      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                      <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-snug mb-4">
                         {service.title}
                       </h2>
                       <p className="text-lg text-muted-foreground mb-8">

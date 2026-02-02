@@ -129,7 +129,7 @@ export const ServicesSection = () => {
             <span className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-xs">🚀</span>
             Our Services
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-snug mb-4">
             <span className="text-italic-bold text-gradient">Meet Your</span> Digital Growth Engine
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -214,7 +214,7 @@ export const ServicesSection = () => {
           className="text-center mt-12"
         >
           <button onClick={openModal} className="btn-primary">
-            BOOK A DEMO
+            BOOK FREE CONSULTATION
             <ArrowRight className="w-5 h-5 ml-2" />
           </button>
         </motion.div>

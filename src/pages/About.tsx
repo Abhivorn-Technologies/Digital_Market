@@ -58,9 +58,9 @@ const About = () => {
               className="max-w-3xl"
             >
               <span className="section-label mb-4">About Us</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Architects of{' '}
-                <span className="text-italic-bold text-gradient">Digital Growth</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-snug mb-6">
+                Scale Now Digital{' '}
+                <span className="text-italic-bold text-gradient">Growth Partner</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
                 We're not your typical digital marketing agency. We're strategic partners
@@ -194,32 +194,53 @@ const About = () => {
                 <motion.div
                   key={member.name}
                   initial="initial"
+                  whileInView="animate"
                   whileHover="hover"
-                  className="flex flex-col items-center"
+                  whileTap="hover"
+                  viewport={{ once: true }}
+                  className="flex flex-col items-center cursor-pointer group"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/10 shadow-2xl cursor-pointer group"
+                  <div
+                    className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/10 shadow-2xl"
                   >
-                    <img
+                    <motion.img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      variants={{
+                        initial: { scale: 0.9, opacity: 0 },
+                        animate: { scale: 1, opacity: 1 },
+                        hover: { scale: 1.1 }
+                      }}
+                      transition={{ duration: 0.5 }}
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </motion.div>
+                    <motion.div
+                      variants={{
+                        initial: { opacity: 0 },
+                        hover: { opacity: 1 }
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"
+                    />
+                  </div>
 
                   <motion.div
                     variants={{
-                      initial: { opacity: 0, y: 10, height: 0 },
-                      hover: { opacity: 1, y: 0, height: 'auto' }
+                      initial: { opacity: 0, y: 10 },
+                      animate: { opacity: 1, y: 0 },
+                      hover: { y: -5 }
                     }}
                     transition={{ duration: 0.3 }}
-                    className="text-center mt-6 overflow-hidden"
+                    className="text-center mt-6"
                   >
-                    <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>
+                    <motion.h3
+                      variants={{
+                        hover: { scale: 1.05, color: 'var(--primary)' }
+                      }}
+                      className="text-2xl font-bold text-foreground mb-1 transition-colors"
+                    >
+                      {member.name}
+                    </motion.h3>
                     <p className="text-lg text-primary font-medium">{member.role}</p>
                   </motion.div>
                 </motion.div>

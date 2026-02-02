@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -42,13 +42,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <Zap className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-              Scale Now Digital
-
-            </span>
+            <img src="/logo.png" alt="Scale Now Digital" className="h-16 md:h-20 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -74,7 +68,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-3">
 
             <button onClick={openModal} className="btn-primary py-2.5 px-5">
-              Book a Demo
+              Book Free Consultation
             </button>
           </div>
 
@@ -128,7 +122,7 @@ export const Navbar = () => {
                   }}
                   className="btn-primary block text-center w-full"
                 >
-                  Book a Demo
+                  Book Free Consultation
                 </button>
 
               </div>

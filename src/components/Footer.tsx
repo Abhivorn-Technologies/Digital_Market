@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Zap, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const footerLinks = {
   solutions: [
@@ -41,14 +41,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <Zap className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-background">
-                Scale Now Digital
-
-              </span>
+            <Link to="/" className="flex items-center gap-2 mb-6 group">
+              <img
+                src="/logo.png"
+                alt="Scale Now Digital"
+                className="h-20 w-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+              />
             </Link>
             <p className="text-background/70 mb-6 max-w-sm">
               Transforming digital presence into global growth. Your partner in

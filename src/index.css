@@ -115,11 +115,11 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent inline-block py-2 px-2;
   }
 
   .text-italic-bold {
-    @apply italic font-bold;
+    @apply italic font-bold inline-block py-2 px-2;
   }
 
   .card-elevated {
@@ -153,6 +153,11 @@
     @apply px-6 py-3 rounded-lg font-semibold border border-border bg-transparent text-foreground transition-all duration-300 hover:bg-muted;
   }
 
+  .btn-dark {
+    @apply px-6 py-3 rounded-lg font-bold bg-foreground text-background transition-all duration-300 inline-flex items-center gap-2 hover:bg-foreground/90 hover:scale-[1.02];
+  }
+
+
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;
   }
@@ -184,7 +189,7 @@
 
   /* Section labels like "OUR SERVICES" */
   .section-label {
-    @apply text-xs font-semibold tracking-[0.2em] uppercase text-primary flex items-center gap-2;
+    @apply text-xs font-semibold tracking-[0.2em] uppercase text-primary flex items-center gap-2 inline-block py-1;
   }
 
   /* Pepper-style comparison table */
@@ -203,7 +208,7 @@
   /* Logo carousel */
   .logo-carousel {
     @apply flex items-center gap-12;
-    animation: scroll 30s linear infinite;
+    animation: scroll 1.5s linear infinite;
   }
 
   @keyframes scroll {

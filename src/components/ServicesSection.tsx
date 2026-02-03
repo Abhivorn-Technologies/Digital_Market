@@ -12,6 +12,7 @@ import serviceGlobal from '@/assets/service-global.png';
 import serviceSocialMedia from '@/assets/service-social-media.png';
 import serviceSeoGeo from '@/assets/service-seo-geo.png';
 import serviceTalent from '@/assets/service-talent.png';
+import serviceEmail from '@/assets/service-email.png';
 
 const services = [
   {
@@ -50,16 +51,25 @@ const services = [
     cta: 'SCALE TRAFFIC',
     image: serviceSeoGeo,
     color: 'from-blue-500/20 to-indigo-500/20',
-    features: ['SEO & AEO Optimization', 'Social Media Marketing'],
+    features: ['SEO & AEO Optimization', 'GEO Engine Optimization'],
+  },
+  {
+    id: 'email-whatsapp',
+    title: 'Email & WhatsApp Marketing',
+    description: 'Nurture relationships through personalised messaging and automated workflows. Build deeper connections through strategic campaigns that drive retention.',
+    cta: 'START NURTURING',
+    image: serviceEmail,
+    color: 'from-orange-400/20 to-orange-600/20',
+    features: ['Personalised Strategy', 'Automated Workflows', 'WhatsApp Business API'],
   },
   {
     id: 'talent-management',
-    title: 'Talent Management & Influencer',
-    description: 'Attract, develop, and retain top talent with strategic workforce planning and development programs. Build high-performing teams aligned with your business goals.',
-    cta: 'BUILD TEAMS',
+    title: 'Influencer Marketing',
+    description: 'Connect with authentic voices your audience trusts. Strategic influencer partnerships that drive engagement, trust, and measurable brand growth.',
+    cta: 'PARTNER NOW',
     image: serviceTalent,
     color: 'from-fuchsia-500/20 to-pink-600/20',
-    features: ['Talent Acquisition', 'Employee Development', 'Performance Management'],
+    features: ['Influencer Marketing', 'Talent Acquisition', 'Employee Development', 'Performance Management'],
   },
   {
     id: 'data-analytics',
@@ -73,7 +83,7 @@ const services = [
   {
     id: 'ai-creative',
     title: 'AI Creative',
-    description: 'High-end AI-driven creative that blends impactful storytelling with performance. We don\'t just make ads—we build creative systems that drive business results.',
+    description: 'Creatives that scale social presence, images, Reels, Short form videos & Ad creatives. We don\'t just make ads—we build creative systems.',
     cta: 'ELEVATE CREATIVE',
     image: serviceAi,
     color: 'from-cyan-500/20 to-blue-500/20',
@@ -131,10 +141,10 @@ export const ServicesSection = () => {
             Our Services
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-snug mb-4">
-            <span className="text-italic-bold text-gradient">Meet Your</span> Digital Growth Engine
+            Scale Your Business With <span className="text-italic-bold text-gradient">Content Led & Paid Ads Growth Engine</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Scale Now Digital replaces fragmented agency workflows with one unified engine for Content,
+            Scale Now Digital replaces fragmented agency workflows with one unified engine for
             Creative, SEO, and Paid Media that drives predictable, compounding growth.
           </p>
         </motion.div>

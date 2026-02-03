@@ -63,10 +63,9 @@ const About = () => {
                 <span className="text-italic-bold text-gradient">Growth Partner</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                We're not your typical digital marketing agency. We're strategic partners
-                who understand that in today's interconnected world, success requires more
-                than just running ads or posting on social media—it demands an integrated
-                approach that turns every digital touchpoint into a growth opportunity.
+                Scale Now Digital don't just offer services—we architect growth. Our integrated approach combines
+                cutting-edge technology, data-driven insights, and creative excellence to deliver
+                measurable results that matter to your bottom line.
               </p>
             </motion.div>
           </div>

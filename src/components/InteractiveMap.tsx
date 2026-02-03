@@ -7,9 +7,8 @@ export const InteractiveMap = () => {
 
   const officeInfo = [
     { icon: MapPin, label: 'Address', value: 'Madhapur, Hyderabad, Telangana 500081, India' },
-    { icon: Phone, label: 'Phone', value: '+91 99631 41996', link: 'tel:9963141996' },
-    { icon: Mail, label: 'Email', value: 'service@scalenowdigital.com', link: 'mailto:service@scalenowdigital.com' },
-    { icon: Clock, label: 'Hours', value: 'Mon - Fri: 9:00 AM - 6:00 PM IST' },
+    { icon: Phone, label: 'Phone', value: '+91 87124 34896', link: 'tel:8712434896' },
+    { icon: Mail, label: 'Email', value: 'Info@Scalenowdigital.com', link: 'mailto:Info@Scalenowdigital.com' },
   ];
 
   return (
@@ -99,24 +98,6 @@ export const InteractiveMap = () => {
         </motion.div>
       </div>
 
-      {/* Quick Contact Footer */}
-      <div className="p-4 bg-muted/30 border-t border-border">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm text-muted-foreground">Open Now</span>
-            </div>
-            <span className="text-sm text-foreground font-medium">9:00 AM - 6:00 PM IST</span>
-          </div>
-          <a
-            href="tel:9963141996"
-            className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-          >
-            Call us: +91 99631 41996
-          </a>
-        </div>
-      </div>
     </motion.div>
   );
 };

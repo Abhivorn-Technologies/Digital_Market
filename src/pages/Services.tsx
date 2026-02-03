@@ -16,6 +16,7 @@ import serviceGlobal from '@/assets/service-global.png';
 import serviceSocialMedia from '@/assets/service-social-media.png';
 import serviceSeoGeo from '@/assets/service-seo-geo.png';
 import serviceTalent from '@/assets/service-talent.png';
+import serviceEmail from '@/assets/service-email.png';
 
 const serviceImages: { [key: string]: string } = {
   'organic-media': serviceSeoGeo,
@@ -26,6 +27,7 @@ const serviceImages: { [key: string]: string } = {
   'pre-sales': servicePresales,
   'ai-creative': serviceAi,
   'global-services': serviceGlobal,
+  'email-whatsapp': serviceEmail,
 };
 
 const iconMap: { [key: string]: LucideIcon } = {
@@ -57,7 +59,7 @@ const Services = () => {
                 <span className="text-italic-bold text-gradient">Into Revenue</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                We don't just offer services—we architect growth. Our integrated approach
+                Scale Now Digital don't just offer services—we architect growth. Our integrated approach
                 combines cutting-edge technology, data-driven insights, and creative excellence
                 to deliver measurable results that matter to your bottom line.
               </p>

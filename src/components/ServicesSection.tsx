@@ -9,8 +9,9 @@ import serviceAnalytics from '@/assets/service-analytics.png';
 import servicePresales from '@/assets/service-presales.png';
 import serviceAi from '@/assets/service-ai.png';
 import serviceGlobal from '@/assets/service-global.png';
-import serviceLeadGen from '@/assets/service-lead-gen.png';
-import serviceDigitalPr from '@/assets/service-digital-pr.png';
+import serviceSocialMedia from '@/assets/service-social-media.png';
+import serviceSeoGeo from '@/assets/service-seo-geo.png';
+import serviceTalent from '@/assets/service-talent.png';
 
 const services = [
   {
@@ -25,7 +26,7 @@ const services = [
   },
   {
     id: 'paid-media',
-    title: 'Performance Marketing / Paid Ads',
+    title: 'Paid Ads Search & Social Media',
 
     description: 'Drive immediate results with precision-targeted campaigns across Google Ads, Meta, marketplaces, and programmatic. Performance marketing that maximizes every dollar spent.',
     cta: 'DRIVE RESULTS',
@@ -34,31 +35,31 @@ const services = [
     features: ['Google & Meta Ads', 'Marketplace Advertising'],
   },
   {
-    id: 'lead-generation',
-    title: 'Lead Generation',
-    description: 'Fill your pipeline with high-quality, qualified prospects through targeted strategies. We focus on delivering leads that convert into actual business revenue.',
-    cta: 'GENERATE LEADS',
-    image: serviceLeadGen,
+    id: 'social-media-brand',
+    title: 'Social Media & Brand Management',
+    description: 'Build engaged communities and elevate your brand presence across social platforms. Strategic content, community management, and brand identity development.',
+    cta: 'BUILD COMMUNITY',
+    image: serviceSocialMedia,
     color: 'from-orange-500/20 to-red-500/20',
-    features: ['B2B & B2C Strategies', 'Pipeline Acceleration', 'Quality Qualification'],
+    features: ['Social Media Strategy', 'Community Management', 'Brand Identity'],
   },
   {
     id: 'organic-media',
-    title: 'SEO & Organic',
+    title: 'SEO+GEO',
     description: 'Our full-stack SEO, AEO & GEO engine unites human-led SME content, technical depth, and authority building—powering visibility across Google, AI search, and social platforms.',
     cta: 'SCALE TRAFFIC',
-    image: serviceSeo,
+    image: serviceSeoGeo,
     color: 'from-blue-500/20 to-indigo-500/20',
     features: ['SEO & AEO Optimization', 'Social Media Marketing'],
   },
   {
-    id: 'digital-pr',
-    title: 'Digital PR & Influencer',
-    description: 'Amplify your brand\'s voice and credibility through strategic digital PR and authentic influencer partnerships. Connect with voices your audience trusts.',
-    cta: 'AMPLIFY BRAND',
-    image: serviceDigitalPr,
+    id: 'talent-management',
+    title: 'Talent Management & Influencer',
+    description: 'Attract, develop, and retain top talent with strategic workforce planning and development programs. Build high-performing teams aligned with your business goals.',
+    cta: 'BUILD TEAMS',
+    image: serviceTalent,
     color: 'from-fuchsia-500/20 to-pink-600/20',
-    features: ['Digital PR Strategy', 'Influencer Marketing', 'Brand Reputation'],
+    features: ['Talent Acquisition', 'Employee Development', 'Performance Management'],
   },
   {
     id: 'data-analytics',
@@ -85,7 +86,7 @@ const services = [
     cta: 'WIN DEALS',
     image: servicePresales,
     color: 'from-amber-500/20 to-orange-500/20',
-    features: ['Pitch Deck Design', 'Proposal Writing', 'Client Journey Mapping'],
+    features: ['Pitch Deck Design', 'Client Journey Mapping'],
   },
 ];
 

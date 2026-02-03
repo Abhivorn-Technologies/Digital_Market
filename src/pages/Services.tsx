@@ -13,10 +13,15 @@ import serviceAnalytics from '@/assets/service-analytics.png';
 import servicePresales from '@/assets/service-presales.png';
 import serviceAi from '@/assets/service-ai.png';
 import serviceGlobal from '@/assets/service-global.png';
+import serviceSocialMedia from '@/assets/service-social-media.png';
+import serviceSeoGeo from '@/assets/service-seo-geo.png';
+import serviceTalent from '@/assets/service-talent.png';
 
 const serviceImages: { [key: string]: string } = {
-  'organic-media': serviceSeo,
+  'organic-media': serviceSeoGeo,
   'paid-media': servicePaid,
+  'social-media-brand': serviceSocialMedia,
+  'talent-management': serviceTalent,
   'data-analytics': serviceAnalytics,
   'pre-sales': servicePresales,
   'ai-creative': serviceAi,

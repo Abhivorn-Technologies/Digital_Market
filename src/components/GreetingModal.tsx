@@ -12,14 +12,17 @@ export const GreetingModal = () => {
         const hasVisited = localStorage.getItem('hasVisitedScaleNow');
 
         if (!hasVisited) {
-            // Set a small timeout to show the modal after a brief delay
+            // Mark as visited immediately
+            localStorage.setItem('hasVisitedScaleNow', 'true');
+
+            // Open the book demo modal directly after a brief delay
             const timer = setTimeout(() => {
-                setIsOpen(true);
+                openModal();
             }, 2000);
 
             return () => clearTimeout(timer);
         }
-    }, []);
+    }, [openModal]);
 
     const handleClose = () => {
         setIsOpen(false);

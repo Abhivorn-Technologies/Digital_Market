@@ -5,9 +5,9 @@ const footerLinks = {
   solutions: [
     { name: 'Global Consulting', path: '/services#global-services' },
     { name: 'Performance Marketing', path: '/services#paid-media' },
-    { name: 'Lead Generation', path: '/services#lead-generation' },
-    { name: 'SEO & Organic', path: '/services#organic-media' },
-    { name: 'Digital PR & Influencer', path: '/services#digital-pr' },
+    { name: 'Social Media & Brand Management', path: '/services#social-media-brand' },
+    { name: 'SEO+GEO', path: '/services#organic-media' },
+    { name: 'Talent Management & Influencer', path: '/services#talent-management' },
     { name: 'Data & Analytics', path: '/services#data-analytics' },
     { name: 'AI Creative', path: '/services#ai-creative' },
     { name: 'Pre-Sales Strategy', path: '/services#pre-sales' },

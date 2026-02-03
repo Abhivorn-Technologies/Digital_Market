@@ -42,11 +42,11 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/logo.png" alt="Scale Now Digital" className="h-16 md:h-20 w-auto" />
+            <img src="/logo.png" alt="Scale Now Digital" className="h-12 md:h-14 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -65,7 +65,7 @@ export const Navbar = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-4">
 
             <button onClick={openModal} className="btn-primary py-2.5 px-5">
               Book Free Consultation

@@ -81,7 +81,7 @@ export const ProcessSection = () => {
         </motion.div>
 
         {/* Process Diagram Image */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -93,7 +93,7 @@ export const ProcessSection = () => {
             alt="Our proven process"
             className="w-full rounded-2xl shadow-lg max-h-[400px] object-contain mx-auto bg-white"
           />
-        </motion.div>
+        </motion.div> */}
 
         {/* Process Steps */}
         <motion.div

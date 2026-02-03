@@ -20,7 +20,7 @@ const Index = () => {
         <ClientLogos />
         <ServicesCardsSection />
         <StrategySection />
-        {/* <ProcessSection /> */}
+        <ProcessSection />
         {/* <CaseStudiesSection /> */}
         <WhyUsSection />
         <TeamSection />

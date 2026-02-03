@@ -1,6 +1,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle, Send, User, Mail, MessageSquare } from 'lucide-react';
+import { X, CheckCircle, Send, User, Mail, Phone, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 import { useModal } from '@/context/ModalContext';
 
@@ -9,6 +9,7 @@ export const BookDemoModal = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phone: '',
         message: '',
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -29,7 +30,7 @@ export const BookDemoModal = () => {
 
     const resetForm = () => {
         setIsSubmitted(false);
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
         closeModal();
     };
 
@@ -51,10 +52,10 @@ export const BookDemoModal = () => {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 pt-24"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="bg-card border border-border rounded-xl shadow-2xl w-full max-w-lg relative overflow-hidden">
+                        <div className="bg-card border border-border rounded-xl shadow-2xl w-full max-w-md relative overflow-hidden">
                             <button
                                 onClick={closeModal}
                                 className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
@@ -62,7 +63,7 @@ export const BookDemoModal = () => {
                                 <X className="w-5 h-5" />
                             </button>
 
-                            <div className="p-6 md:p-8">
+                            <div className="p-5 md:p-6">
                                 {isSubmitted ? (
                                     <div className="text-center py-8">
                                         <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center mx-auto mb-6">
@@ -116,6 +117,22 @@ export const BookDemoModal = () => {
                                             </div>
 
                                             <div>
+                                                <label className="block text-sm font-medium text-foreground mb-1.5">Mobile Number</label>
+                                                <div className="relative">
+                                                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                                                    <input
+                                                        required
+                                                        type="tel"
+                                                        name="phone"
+                                                        value={formData.phone}
+                                                        onChange={handleChange}
+                                                        className="w-full pl-10 pr-4 py-2.5 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+                                                        placeholder="+91 99999 99999"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div>
                                                 <label className="block text-sm font-medium text-foreground mb-1.5">Message (Optional)</label>
                                                 <div className="relative">
                                                     <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
@@ -123,7 +140,7 @@ export const BookDemoModal = () => {
                                                         name="message"
                                                         value={formData.message}
                                                         onChange={handleChange}
-                                                        rows={3}
+                                                        rows={2}
                                                         className="w-full pl-10 pr-4 py-2.5 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none resize-none"
                                                         placeholder="Any specific requirements?"
                                                     />

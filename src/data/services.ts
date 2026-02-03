@@ -19,14 +19,12 @@ export const services: Service[] = [
     icon: 'Globe',
     features: [
       'Global SEO & International Search Strategy - Dominate search across multiple countries',
-      'International Paid Media Campaigns - Platform-specific strategies for each market',
-      'Multi-Language Campaign Management - Navigate cultural nuances effectively',
-      'Cross-Border E-commerce Setup - Technical implementation for global selling'
+      'International Paid Media Campaigns - Platform-specific strategies for each market'
     ]
   },
   {
     id: 'paid-media',
-    title: 'Performance Marketing / Paid Ads',
+    title: 'Paid Ads Search & Social Media',
 
     shortDesc: 'Generate immediate results with performance-driven campaigns across Google, Meta, and marketplaces',
     description: 'Drive immediate results and scalable growth through precision-targeted paid campaigns across multiple platforms.',
@@ -40,45 +38,43 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 'lead-generation',
-    title: 'Lead Generation',
-    shortDesc: 'Fill your pipeline with high-quality, qualified prospects through targeted acquisition strategies',
-    description: 'Comprehensive lead generation strategies designed to identify, attract, and qualify high-value prospects for your business.',
-    icon: 'Target',
+    id: 'social-media-brand',
+    title: 'Social Media & Brand Management',
+    shortDesc: 'Build engaged communities and elevate your brand presence across social platforms',
+    description: 'Comprehensive social media and brand management strategies designed to build authentic connections, drive engagement, and strengthen your brand identity.',
+    icon: 'Sparkles',
     features: [
-      'B2B & B2C Lead Gen - Tailored strategies for your target market',
-      'Account-Based Marketing (ABM) - Target high-value accounts with precision',
-      'Pipeline Acceleration - Move leads through your sales funnel faster',
-      'Lead Qualification - Ensure your sales team focuses on ready-to-buy prospects'
+      'Social Media Strategy - Platform-specific content and engagement strategies',
+      'Community Management - Build and nurture engaged brand communities',
+      'Brand Identity Development - Create consistent, compelling brand experiences',
+      'Content Creation & Curation - High-quality content that resonates with your audience'
     ]
   },
   {
     id: 'organic-media',
-    title: 'Organic Media',
-    shortDesc: 'Drive sustainable traffic and authority through SEO, AEO, GEO, social media, and influencer partnerships',
-    description: 'Build lasting visibility and authority across search and social platforms with strategies designed for the modern digital landscape.',
+    title: 'SEO+GEO',
+    shortDesc: 'Drive sustainable traffic and authority through SEO, AEO, and GEO optimization',
+    description: 'Build lasting visibility and authority across search platforms with strategies designed for the modern digital landscape.',
     icon: 'Search',
     features: [
       'SEO (Search Engine Optimisation) - Dominate search results with comprehensive optimisation strategies',
       'AEO (Answer Engine Optimisation) - Position your brand as the definitive answer to customer questions',
       'GEO (Generative Engine Optimisation) - Stay ahead with AI-driven search experience optimisation',
-      'Social Media Managing - Build engaged communities and drive conversions',
-      'Digital PR - Amplify your brand\'s voice and credibility',
       'Influencer Marketing - Connect with authentic voices your audience trusts',
       'Email & WhatsApp Marketing - Nurture relationships through personalised messaging'
     ]
   },
   {
-    id: 'digital-pr',
-    title: 'Digital PR & Influencer',
-    shortDesc: 'Amplify your brand\'s voice and credibility through strategic digital PR and authentic influencer partnerships.',
-    description: 'Build brand authority and trust through strategic storytelling, media relations, and authentic influencer collaborations that connect with your audience.',
+    id: 'talent-management',
+    title: 'Talent Management & Influencer',
+    shortDesc: 'Attract, develop, and retain top talent with strategic workforce planning and development programs.',
+    description: 'Build high-performing teams through comprehensive talent acquisition, development, and retention strategies that align with your business goals.',
     icon: 'Sparkles',
     features: [
-      'Digital PR Strategy - Build relationships with key media outlets',
-      'Influencer Marketing - Connect with authentic voices your audience trusts',
-      'Brand Reputation - Manage and enhance your online presence',
-      'Crisis Management - Strategic communication during critical times'
+      'Talent Acquisition - Strategic recruitment and hiring processes',
+      'Employee Development - Training and upskilling programs',
+      'Performance Management - Goal setting and performance tracking',
+      'Retention Strategies - Build engaging workplace culture'
     ]
   },
   {
@@ -117,7 +113,6 @@ export const services: Service[] = [
     features: [
       'Pre-Sales Planning & Support - Strategic planning from first contact to contract',
       'Pitch Deck Design - Compelling visual storytelling that captivates',
-      'Proposal Writing - Persuasive proposals that position you as the obvious choice',
       'Client Journey Mapping - Optimise every touchpoint in the decision-making process'
     ]
   }

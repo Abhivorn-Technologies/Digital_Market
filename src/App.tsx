@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import { ModalProvider } from "./context/ModalContext";
 import { BookDemoModal } from "./components/BookDemoModal";
 import { GreetingModal } from "./components/GreetingModal";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ const App = () => {
       toast.success("Welcome back to Scale Now!", {
         description: "We're glad to see you again. How can we help you grow today?",
         duration: 5000,
-        position: 'bottom-right',
+        position: 'bottom-left',
       });
     }
   }, []);
@@ -39,6 +40,7 @@ const App = () => {
           <Sonner expand={false} richColors closeButton />
           <BookDemoModal />
           <GreetingModal />
+          <WhatsAppButton />
           <BrowserRouter>
             <ScrollToTop />
             <Routes>

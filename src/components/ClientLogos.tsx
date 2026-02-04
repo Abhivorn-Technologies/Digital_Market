@@ -24,8 +24,8 @@ export const ClientLogos = () => {
         >
           <span className="section-label justify-center mb-4">Our Clients</span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-            Driving content-led growth for{' '}
-            <span className="text-italic-bold text-gradient">Industry Leaders</span>
+            Scaling business with{' '}
+            <span className="text-italic-bold text-gradient">paid ads & content-led strategies</span>
           </h2>
         </motion.div>
 

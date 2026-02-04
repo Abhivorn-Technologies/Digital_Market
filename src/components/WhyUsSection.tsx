@@ -69,9 +69,10 @@ export const WhyUsSection = () => {
             Why Leading Brands{' '}
             <span className="text-italic-bold text-gradient">Choose Scale Now Digital</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Compare how Scale Now Digital outperforms traditional agencies and tools with an
-            AI-powered approach that unites strategy, technology, and talent.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Scale Now Digital don't just offer services—we architect growth. Our integrated approach combines
+            cutting-edge technology, data-driven insights, and creative excellence to deliver
+            measurable results that matter to your bottom line.
           </p>
         </motion.div>
 

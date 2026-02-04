@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Search, TrendingUp, Sparkles } from 'lucide-react';
 import { useModal } from '@/context/ModalContext';
 
 // Import service images (using existing assets)
-import serviceSeo from '@/assets/service-seo.png';
+import serviceSeo from '@/assets/service-seo-geo.png';
 import serviceAi from '@/assets/service-ai.png';
 import servicePaid from '@/assets/service-paid.png';
 
@@ -14,20 +14,23 @@ const servicesCards = [
         description: 'Full-stack SEO and GEO engine combining human expertise and authority building.',
         cta: 'SCALE TRAFFIC',
         image: serviceSeo,
+        icon: Search,
     },
     {
-        id: 'content',
-        title: 'Content',
-        description: 'Expert-led ebooks, blogs, reports, and product content to educate buyers.',
-        cta: 'BUILD CONTENT',
+        id: 'paid-ads',
+        title: 'Paid Ads',
+        description: 'Precision-targeted campaigns across Google Ads, Meta, and marketplaces to drive results.',
+        cta: 'GET LEADS',
         image: servicePaid,
+        icon: TrendingUp,
     },
     {
-        id: 'creative',
-        title: 'Creative',
-        description: 'On-demand creative team for video, design, and full brand campaigns.',
-        cta: 'ELEVATE CREATIVITY',
+        id: 'ai-creative',
+        title: 'AI Creative',
+        description: 'Creatives that scale social presence, images, Reels, Short form videos & Ad creatives',
+        cta: 'ELEVATE',
         image: serviceAi,
+        icon: Sparkles,
     },
 ];
 
@@ -56,7 +59,7 @@ export const ServicesCardsSection = () => {
     return (
         <section className="section-padding bg-background">
             <div className="max-w-7xl mx-auto container-padding">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     {/* Left Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -70,12 +73,13 @@ export const ServicesCardsSection = () => {
                             OUR SERVICES
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-                            Meet Your{' '}
-                            <span className="text-italic-bold text-gradient">Content-Led Growth Engine</span>
+                            Transform Your Digital Presence{' '}
+                            <span className="text-[#FF5C00] italic">Into Revenue</span>
                         </h2>
                         <p className="text-lg text-muted-foreground mb-8">
-                            Scale Now Digital replaces fragmented agency workflows with one unified engine for Content,
-                            Creative, SEO, and Paid Media.
+                            Scale Now Digital don't just offer services—we architect growth. Our integrated approach
+                            combines cutting-edge technology, data-driven insights, and creative excellence to deliver
+                            measurable results that matter to your bottom line.
                         </p>
                         <button
                             onClick={openModal}
@@ -100,39 +104,49 @@ export const ServicesCardsSection = () => {
                                 variants={cardVariants}
                                 whileHover={{
                                     y: -12,
-                                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-                                    transition: { duration: 0.3 }
+                                    transition: { duration: 0.4, ease: "easeOut" }
                                 }}
-                                className="group relative rounded-2xl overflow-hidden cursor-pointer h-[420px] md:h-[480px]"
+                                className="group relative rounded-[32px] overflow-hidden cursor-pointer h-[480px] md:h-[520px] shadow-xl hover:shadow-2xl transition-all duration-500"
                             >
-                                {/* Background Image */}
-                                <motion.img
-                                    src={service.image}
-                                    alt={service.title}
-                                    className="absolute inset-0 w-full h-full object-cover"
-                                    whileHover={{ scale: 1.08 }}
-                                    transition={{ duration: 0.5 }}
-                                />
+                                {/* Background Image with subtle zoom on hover */}
+                                <motion.div className="absolute inset-0 w-full h-full">
+                                    <motion.img
+                                        src={service.image}
+                                        alt={service.title}
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ duration: 0.7 }}
+                                    />
+                                    {/* Refined Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                                </motion.div>
 
-                                {/* Dark Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                                {/* Glassmorphism Content Box */}
+                                <div className="absolute bottom-4 left-4 right-4 p-6 rounded-[24px] bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <div className="p-2 rounded-lg bg-primary/20 backdrop-blur-md">
+                                            <service.icon className="w-5 h-5 text-primary" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white tracking-tight">
+                                            {service.title}
+                                        </h3>
+                                    </div>
 
-                                {/* Content */}
-                                <div className="absolute inset-0 flex flex-col justify-end p-6">
-                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-white/80 text-sm leading-relaxed mb-5">
+                                    <p className="text-white/80 text-sm leading-relaxed mb-6 line-clamp-2 group-hover:line-clamp-none transition-all duration-500">
                                         {service.description}
                                     </p>
+
                                     <button
                                         onClick={openModal}
-                                        className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm px-5 py-3 rounded-full transition-all duration-300 w-fit group-hover:gap-3"
+                                        className="inline-flex items-center gap-2 bg-primary hover:bg-white hover:text-black text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full transition-all duration-300 w-full justify-center group/btn"
                                     >
                                         {service.cta}
-                                        <ArrowRight className="w-4 h-4" />
+                                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                     </button>
                                 </div>
+
+                                {/* Subtle Border Shine on Hover */}
+                                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 rounded-[32px] transition-colors duration-500 pointer-events-none" />
                             </motion.div>
                         ))}
                     </motion.div>

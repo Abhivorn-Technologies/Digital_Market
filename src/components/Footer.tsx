@@ -7,9 +7,10 @@ const footerLinks = {
     { name: 'Performance Marketing', path: '/services#paid-media' },
     { name: 'Social Media & Brand Management', path: '/services#social-media-brand' },
     { name: 'SEO+GEO', path: '/services#organic-media' },
-    { name: 'Talent Management & Influencer', path: '/services#talent-management' },
+    { name: 'Influencer Marketing', path: '/services#talent-management' },
     { name: 'Data & Analytics', path: '/services#data-analytics' },
     { name: 'AI Creative', path: '/services#ai-creative' },
+    { name: 'Email & WhatsApp Marketing', path: '/services#email-whatsapp' },
     { name: 'Pre-Sales Strategy', path: '/services#pre-sales' },
   ],
   company: [
@@ -49,23 +50,23 @@ export const Footer = () => {
               />
             </Link>
             <p className="text-background/70 mb-6 max-w-sm">
-              Transforming digital presence into global growth. Your partner in
-              data-driven digital marketing that delivers measurable ROI.
+              Scale Now Digital don't just offer services—we architect growth. Our integrated approach
+              combines technology, data, and creative excellence to deliver results.
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:service@scalenowdigital.com"
+                href="mailto:Info@Scalenowdigital.com"
                 className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                service@scalenowdigital.com
+                Info@Scalenowdigital.com
               </a>
               <a
-                href="tel:9963141996"
+                href="tel:8712434896"
                 className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +91 99631 41996
+                +91 87124 34896
               </a>
               <div className="flex items-center gap-3 text-background/70">
                 <MapPin className="w-4 h-4" />
@@ -76,7 +77,7 @@ export const Footer = () => {
 
           {/* Solutions */}
           <div>
-            <h4 className="font-semibold text-background mb-4">Solutions</h4>
+            <h4 className="font-semibold text-background mb-4">Services</h4>
             <ul className="space-y-3">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>

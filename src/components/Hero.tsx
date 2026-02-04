@@ -23,13 +23,9 @@ export const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-4 leading-relaxed">
-              Scale your business 10x faster with data-driven insights, cutting-edge AI technology,
-              and creative excellence.{' '}
-              <span className="font-semibold text-foreground">
-                Scale Now Digital combines world-class strategy, technology, and creative talent in one
-                powerful growth engine
-              </span>{' '}
-              to drive measurable results—from local markets to global expansion.
+              Scale Now Digital don't just offer services—we architect growth. Our integrated approach combines
+              cutting-edge technology, data-driven insights, and creative excellence to deliver
+              measurable results that matter to your bottom line.
             </p>
 
             {/* CTA Buttons */}

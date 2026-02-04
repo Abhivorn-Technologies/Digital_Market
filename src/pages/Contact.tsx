@@ -9,31 +9,24 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'service@scalenowdigital.com',
-    link: 'mailto:service@scalenowdigital.com',
+    value: 'Info@Scalenowdigital.com',
+    link: 'mailto:Info@Scalenowdigital.com',
     description: 'Send us an email anytime'
   },
   {
     icon: Phone,
     title: 'Phone',
-    value: '+91 99631 41996',
-    link: 'tel:9963141996',
-    description: 'Mon-Fri from 9am to 6pm IST'
+    value: '+91 87124 34896',
+    link: 'tel:8712434896',
+    description: 'We are here to help'
   },
   {
     icon: MessageSquare,
     title: 'WhatsApp',
-    value: '+91 99631 41996',
-    link: 'https://wa.me/919963141996',
+    value: '+91 87124 34896',
+    link: 'https://wa.me/918712434896',
     description: 'Quick response within 1 hour'
   },
-  {
-    icon: Clock,
-    title: 'Business Hours',
-    value: 'Mon - Fri: 9AM - 6PM IST',
-    link: null,
-    description: 'Weekend support available'
-  }
 ];
 
 const containerVariants = {

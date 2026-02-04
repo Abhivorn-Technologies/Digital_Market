@@ -1,4 +1,4 @@
-import { Search, TrendingUp, BarChart3, Presentation, Sparkles, Globe, Target } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Presentation, Sparkles, Globe, Target, Mail } from 'lucide-react';
 
 export interface Service {
   id: string;
@@ -59,18 +59,30 @@ export const services: Service[] = [
     features: [
       'SEO (Search Engine Optimisation) - Dominate search results with comprehensive optimisation strategies',
       'AEO (Answer Engine Optimisation) - Position your brand as the definitive answer to customer questions',
-      'GEO (Generative Engine Optimisation) - Stay ahead with AI-driven search experience optimisation',
-      'Influencer Marketing - Connect with authentic voices your audience trusts',
-      'Email & WhatsApp Marketing - Nurture relationships through personalised messaging'
+      'GEO (Generative Engine Optimisation) - Stay ahead with AI-driven search experience optimisation'
+    ]
+  },
+  {
+    id: 'email-whatsapp',
+    title: 'Email & WhatsApp Marketing',
+    shortDesc: 'Nurture relationships through personalised messaging and automated workflows',
+    description: 'Build deeper connections with your audience through strategic email and WhatsApp campaigns that drive retention and customer lifetime value.',
+    icon: 'Mail',
+    features: [
+      'Personalised Campaign Strategy - Tailored messaging for every segment',
+      'Automated Workflows - Smart triggers that nurture leads 24/7',
+      'WhatsApp Business API - Scalable communication on the world\'s favorite chat app',
+      'Retention & ROI - Focus on customer lifetime value and repeat business'
     ]
   },
   {
     id: 'talent-management',
-    title: 'Talent Management & Influencer',
-    shortDesc: 'Attract, develop, and retain top talent with strategic workforce planning and development programs.',
-    description: 'Build high-performing teams through comprehensive talent acquisition, development, and retention strategies that align with your business goals.',
+    title: 'Influencer Marketing',
+    shortDesc: 'Connect with authentic voices your audience trusts to grow your brand and reach.',
+    description: 'Elevate your brand through strategic influencer partnerships that drive engagement, trust, and measurable impact across social platforms.',
     icon: 'Sparkles',
     features: [
+      'Influencer Marketing - Connect with authentic voices your audience trusts',
       'Talent Acquisition - Strategic recruitment and hiring processes',
       'Employee Development - Training and upskilling programs',
       'Performance Management - Goal setting and performance tracking',
@@ -95,7 +107,7 @@ export const services: Service[] = [
     id: 'ai-creative',
     title: 'AI Creative Media',
     shortDesc: 'Leverage generative AI to produce high-impact creative at scale while maintaining brand consistency',
-    description: 'High-end AI-driven creative media services that blend impactful storytelling with performance-driven results.',
+    description: 'Creatives that scale social presence, images, Reels, Short form videos & Ad creatives.',
     icon: 'Sparkles',
     features: [
       'Brand-First Creative - Your brand identity built into every ad',

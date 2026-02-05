@@ -93,7 +93,7 @@ export const ContactForm = () => {
               onChange={handleChange}
               required
               className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-              placeholder="John Doe"
+              placeholder="Nik"
             />
           </div>
         </div>
@@ -113,7 +113,7 @@ export const ContactForm = () => {
               onChange={handleChange}
               required
               className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-              placeholder="john@company.com"
+              placeholder="Name@company.com"
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ export const ContactForm = () => {
             </>
           ) : (
             <>
-              Send Message
+              Submit
               <Send className="w-5 h-5" />
             </>
           )}

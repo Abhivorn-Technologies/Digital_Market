@@ -13,7 +13,10 @@ const ScrollToTop = () => {
                 }, 100);
             }
         } else {
-            window.scrollTo(0, 0);
+            const timer = setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 0);
+            return () => clearTimeout(timer);
         }
     }, [pathname, hash]);
 

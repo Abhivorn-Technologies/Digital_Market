@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BadgeCheck } from 'lucide-react';
 import heroImage from '@/assets/founder.png';
 import { useModal } from '@/context/ModalContext';
 
@@ -23,8 +23,8 @@ export const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-4 leading-relaxed">
-              Scale Now Digital don't just offer services—we architect growth. Our integrated approach combines
-              cutting-edge technology, data-driven insights, and creative excellence to deliver
+              Scale Now Digital don't just offer services—we architect growth. Our integrated approach
+              combines cutting-edge technology, data-driven insights, and creative excellence to deliver
               measurable results that matter to your bottom line.
             </p>
 
@@ -69,30 +69,20 @@ export const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute top-4 right-0 stat-badge z-20"
+                className="absolute top-12 -left-8 bg-background/80 backdrop-blur-md border border-primary/20 shadow-lg py-2 pl-2 pr-5 rounded-full flex items-center gap-3 z-20"
               >
-                <span className="text-secondary font-bold text-lg">10x</span>
-                <span className="text-sm text-muted-foreground">Faster<br />Content Velocity</span>
+                <div className="bg-primary/10 p-1.5 rounded-full">
+                  <BadgeCheck className="w-5 h-5 text-primary" />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <span className="font-bold text-sm leading-tight">Founder & CEO</span>
+                  <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Scale Now Digital </span>
+                </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute bottom-20 -right-4 stat-badge z-20"
-              >
-                <span className="text-primary font-bold text-lg">+220%</span>
-                <span className="text-sm text-muted-foreground">Non-Branded<br />Pipeline Growth</span>
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="absolute bottom-4 left-0 stat-badge bg-primary text-primary-foreground font-bold z-20"
-              >
-                <span className="text-sm font-bold">#1 Get Cited In AI Search</span>
-              </motion.div>
+
+
             </div>
           </motion.div>
         </div>

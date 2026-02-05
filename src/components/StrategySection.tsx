@@ -1,19 +1,23 @@
 import { motion } from 'framer-motion';
 import { Rocket, Search, Heart, CheckCircle2, Youtube, ArrowUpRight } from 'lucide-react';
 
+import strategyCard1 from '@/assets/strategycard1.jpg';
+import socialMediaImage from '@/assets/service-social-media.png';
+
 export const StrategySection = () => {
     return (
         <section className="pt-0 pb-20 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto container-padding">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 items-start">
 
                     {/* Left Column: Header + Card 1 */}
-                    <div className="flex flex-col gap-12 lg:gap-16">
+                    <div className="flex flex-col gap-6">
                         {/* Header */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            className="mb-6 lg:mb-8"
                         >
                             <span className="flex items-center gap-2 text-[#FF5C00] font-bold tracking-wider text-sm uppercase mb-4">
                                 STRATEGY <Rocket className="w-4 h-4" />
@@ -30,11 +34,11 @@ export const StrategySection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="bg-[#FDF6F0] rounded-[48px] p-8 lg:p-10 flex flex-col min-h-[550px]"
+                            className="bg-[#FDF6F0] rounded-[48px] p-8 lg:p-10 flex flex-col h-full min-h-[600px]"
                         >
                             <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">Enterprise Growth Audits</h3>
                             <p className="text-[#4A4A4A] text-[15px] leading-relaxed mb-10">
-                                Deep, consulting-driven audits of your funnel, competitors, content ecosystem, and market landscape. We uncover unseen opportunities, diagnose bottlenecks, and define a clear strategic path to exponential organic growth.
+                                Comprehensive, consulting-led audits of your sales funnel, competitive landscape, and content ecosystem. We identify untapped opportunities, eliminate bottlenecks, and engineer a precise roadmap for scalable organic growth.
                             </p>
 
                             {/* Visual: Traffic Comparison */}
@@ -94,11 +98,11 @@ export const StrategySection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-[#FDF6F0] rounded-[48px] p-6 md:p-8 lg:p-10 flex flex-col min-h-[500px] md:min-h-[600px] lg:min-h-[850px] lg:mt-12"
+                        className="bg-[#FDF6F0] rounded-[48px] p-6 md:p-8 lg:p-10 flex flex-col"
                     >
                         <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">AI-Era Search Growth Plans</h3>
                         <p className="text-[#4A4A4A] text-[15px] leading-relaxed mb-10">
-                            We design tailored SEO + GEO strategies for the AI era — covering YouTube, ChatGPT, AI Overviews, and modern discovery platforms. From entity maps to content architectures, we help you build visibility where your buyers are actually searching next.
+                            We design tailored SEO + GEO strategies for the AI era — covering YouTube, ChatGPT, AI Overviews, Perplexity, Gemini, and other AI agents. From entity maps to content architectures, we help you build visibility where your buyers are actually searching next.
                         </p>
 
                         <div className="mt-8 flex flex-col items-center flex-1 relative">
@@ -111,19 +115,19 @@ export const StrategySection = () => {
                             </div>
 
                             {/* Character Illustration Area */}
-                            <div className="relative w-full aspect-[3/4] max-w-[340px] flex items-end">
+                            <div className="relative flex flex-col items-center -mx-6 -mb-6 md:-mx-8 md:-mb-8 lg:-mx-10 lg:-mb-10 w-[calc(100%+3rem)] md:w-[calc(100%+4rem)] lg:w-[calc(100%+5rem)]">
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square bg-[#FFDCCE]/50 rounded-full scale-125 -z-10" />
 
                                 <img
-                                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&h=600&auto=format&fit=crop"
+                                    src={strategyCard1}
                                     alt="AI Strategy"
-                                    className="w-full h-full object-contain object-bottom mix-blend-multiply filter contrast-[1.1] grayscale-[0.2]"
+                                    className="w-full h-auto rounded-b-[48px] object-cover mix-blend-multiply [mask-image:linear-gradient(to_bottom,transparent,black_20%)]"
                                 />
 
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
-                                    className="absolute bottom-4 md:bottom-6 left-2 right-2 md:left-1/2 md:-translate-x-1/2 md:w-[90%] bg-white rounded-[24px] md:rounded-3xl p-4 md:p-6 shadow-2xl border border-gray-100 z-20"
+                                    className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 w-fit bg-white rounded-[24px] md:rounded-3xl p-4 md:p-6 shadow-2xl border border-gray-100 z-20"
                                 >
                                     <div className="space-y-3 md:space-y-4">
                                         <div className="flex items-center gap-2 md:gap-3">
@@ -159,7 +163,7 @@ export const StrategySection = () => {
                     </motion.div>
 
                     {/* Right Column Mix */}
-                    <div className="flex flex-col gap-6 lg:gap-8 lg:mt-32">
+                    <div className="flex flex-col gap-6">
 
                         {/* Card 3: AI Transformation Workshops */}
                         <motion.div
@@ -171,7 +175,7 @@ export const StrategySection = () => {
                         >
                             <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4 text-wrap">AI Transformation Workshops & Roadmaps</h3>
                             <p className="text-[#4A4A4A] text-[15px] leading-relaxed mb-10">
-                                Hands-on workshops & roadmaps for AI-native content & creative workflows
+                                Accelerate organization-wide AI adoption with our executive roadmaps and hands-on squad training. We re-engineer content workflows to integrate best-in-class AI tools, ensuring speed, quality, and defensible differentiation.
                             </p>
 
                             <div className="bg-[#FF7A50] rounded-[32px] p-8 relative overflow-hidden min-h-[220px]">
@@ -222,12 +226,12 @@ export const StrategySection = () => {
                             className="bg-[#FDF6F0] rounded-[48px] p-8 lg:p-10 flex flex-col mt-4"
                         >
                             <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">Social Strategies and Audits</h3>
-                            <p className="text-[#4A4A4A] text-[15px] leading-relaxed mb-10">
-                                We craft social strategies using cultural insight, audience behavior, and formats that capture attention.
+                            <p className="text-[#4A4A4A] text-[15px] leading-relaxed mb-6">
+                                We engineer data-backed social strategies that decode cultural signals and audience behavior, creating high-impact formats that command attention and drive meaningful engagement.
                             </p>
 
-                            <div className="relative pt-12">
-                                <div className="bg-white rounded-[40px] p-8 pb-12 shadow-2xl border border-gray-50 relative z-10">
+                            <div className="relative pt-6">
+                                <div className="bg-white rounded-[40px] p-6 pb-8 shadow-2xl border border-gray-50 relative z-10">
                                     <div className="flex items-center justify-between mb-8">
                                         <p className="text-[17px] font-bold text-[#1A1A1A]">Sentiment Trends</p>
                                         <div className="flex gap-2">
@@ -242,12 +246,12 @@ export const StrategySection = () => {
                                             d="M0,80 L30,40 L60,60 L90,20 L120,50 L150,10 L180,40 L210,5 L240,30 L270,15 L300,50"
                                             fill="none"
                                             stroke="#FF7A50"
-                                            strokeWidth="4"
+                                            strokeWidth="5"
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                             initial={{ pathLength: 0 }}
-                                            whileInView={{ pathLength: 1 }}
-                                            transition={{ duration: 1.5 }}
+                                            animate={{ pathLength: 1 }}
+                                            transition={{ duration: 2, ease: "easeOut" }}
                                         />
                                     </svg>
                                 </div>
@@ -258,11 +262,11 @@ export const StrategySection = () => {
                                 >
                                     <div className="rounded-2xl overflow-hidden mb-3 aspect-square relative bg-gradient-to-br from-[#00D1FF] to-[#006B44]">
                                         <img
-                                            src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=200&h=200&auto=format&fit=crop"
-                                            alt="Post"
-                                            className="w-full h-full object-cover mix-blend-overlay opacity-60"
+                                            src={socialMediaImage}
+                                            alt="Social Media Strategy"
+                                            className="w-full h-full object-cover mix-blend-overlay opacity-80"
                                         />
-                                        <div className="absolute top-2 left-2 bg-white/20 backdrop-blur-md p-1 rounded-md text-[8px] text-white font-black">ACTIVE</div>
+                                        <div className="absolute top-2 left-2 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-md text-[8px] text-white font-black tracking-wider border border-white/20">ACTIVE</div>
                                     </div>
                                     <div className="px-1">
                                         <div className="flex items-center gap-2 mb-2">

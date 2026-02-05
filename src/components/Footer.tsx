@@ -70,7 +70,7 @@ export const Footer = () => {
               </a>
               <div className="flex items-center gap-3 text-background/70">
                 <MapPin className="w-4 h-4" />
-                Hyderabad, India
+                Matrix IT Hub, Hyderabad, India
               </div>
             </div>
           </div>

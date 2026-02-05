@@ -27,7 +27,7 @@ const comparisonData = [
   {
     feature: 'Speed & Scale',
     icon: Zap,
-    pepper: { status: 'check', text: '10× faster delivery with AI workflows' },
+    pepper: { status: 'check', text: '10× faster delivery with Paid Ads' },
     agencies: { status: 'warning', text: 'Slow to scale' },
     tools: { status: 'warning', text: 'Low accuracy and brand fit' },
   },

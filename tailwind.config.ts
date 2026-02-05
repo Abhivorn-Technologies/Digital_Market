@@ -107,7 +107,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "scale-in": "scale-in 0.3s ease-out",
         "slide-in-right": "slide-in-right 0.3s ease-out",
-        scroll: "scroll 30s linear infinite",
+        scroll: "scroll 20s linear infinite",
         float: "float 3s ease-in-out infinite",
       },
     },

@@ -7,19 +7,19 @@ import { CTASection } from '@/components/CTASection';
 import { services } from '@/data/services';
 
 // Import service images
-import serviceSeo from '@/assets/service-seo.png';
-import servicePaid from '@/assets/service-paid.png';
-import serviceAnalytics from '@/assets/service-analytics.png';
-import servicePresales from '@/assets/service-presales.png';
-import serviceAi from '@/assets/service-ai.png';
-import serviceGlobal from '@/assets/service-global.png';
-import serviceSocialMedia from '@/assets/service-social-media.png';
-import serviceSeoGeo from '@/assets/service-seo-geo.png';
-import serviceTalent from '@/assets/service-talent.png';
-import serviceEmail from '@/assets/service-email.png';
+// Import service images
+import serviceSeo from '@/assets/seo.jpg';
+import servicePaid from '@/assets/paidads1.jpg';
+import serviceAnalytics from '@/assets/dataanalytics.jpg';
+import servicePresales from '@/assets/presales.jpg';
+import serviceAi from '@/assets/AiCreatives.png';
+import serviceGlobal from '@/assets/globalconsulting.jpg';
+import serviceSocialMedia from '@/assets/socialmedia.jpg';
+import serviceTalent from '@/assets/influncermarketing.jpg';
+import serviceEmail from '@/assets/email-whatsapp1.jpg';
 
 const serviceImages: { [key: string]: string } = {
-  'organic-media': serviceSeoGeo,
+  'organic-media': serviceSeo,
   'paid-media': servicePaid,
   'social-media-brand': serviceSocialMedia,
   'talent-management': serviceTalent,
@@ -84,21 +84,21 @@ const Services = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center border lg:border-none rounded-3xl lg:rounded-none p-6 lg:p-0 shadow-lg lg:shadow-none bg-card lg:bg-transparent"
                   >
                     {/* Content */}
-                    <div className={isEven ? 'lg:order-1' : 'lg:order-2'}>
+                    <div className={`order-2 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                       <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                         <IconComponent className="w-7 h-7 text-primary" />
                       </div>
-                      <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-snug mb-4">
+                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-snug mb-4">
                         {service.title}
                       </h2>
-                      <p className="text-lg text-muted-foreground mb-8">
+                      <p className="text-base md:text-lg text-muted-foreground mb-8">
                         {service.description}
                       </p>
                       <ul className="space-y-3 mb-8">
-                        {service.features.slice(0, 5).map((feature, fIndex) => (
+                        {service.features.map((feature, fIndex) => (
                           <li key={fIndex} className="flex items-start gap-3">
                             <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                               <Check className="w-3 h-3 text-green-600" />
@@ -109,7 +109,7 @@ const Services = () => {
                       </ul>
                       <Link
                         to="/contact"
-                        className="btn-primary"
+                        className="btn-primary w-full md:w-auto justify-center"
                       >
                         Get Started
                         <ArrowRight className="w-5 h-5" />
@@ -117,12 +117,12 @@ const Services = () => {
                     </div>
 
                     {/* Image */}
-                    <div className={isEven ? 'lg:order-2' : 'lg:order-1'}>
-                      <div className="card-elevated overflow-hidden">
+                    <div className={`order-1 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                      <div className="card-elevated overflow-hidden rounded-2xl h-64 md:h-80 lg:h-80">
                         <img
                           src={image}
                           alt={service.title}
-                          className="w-full h-80 object-cover"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>

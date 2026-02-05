@@ -8,9 +8,7 @@ import { FAQAccordion } from '@/components/FAQAccordion';
 import { faqs } from '@/data/faqs';
 
 const FAQ = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <div className="min-h-screen bg-background">

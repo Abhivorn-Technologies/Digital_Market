@@ -31,8 +31,8 @@ export const ClientLogos = () => {
 
         {/* Logo Carousel */}
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-12 animate-scroll">
-            {[...clients, ...clients, ...clients].map((client, index) => (
+          <div className="flex items-center gap-8 md:gap-12 animate-scroll min-w-max">
+            {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
                 className="flex-shrink-0 flex items-center justify-center h-12 w-40 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"

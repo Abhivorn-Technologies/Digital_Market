@@ -20,6 +20,8 @@ const queryClient = new QueryClient();
 
 import ScrollToTop from "./components/ScrollToTop";
 
+import { AutoOpenDemoModal } from "./components/AutoOpenDemoModal";
+
 const App = () => {
   useEffect(() => {
     const hasVisited = localStorage.getItem('hasVisitedScaleNow');
@@ -40,6 +42,7 @@ const App = () => {
           <Sonner expand={false} richColors closeButton />
           <BookDemoModal />
           <GreetingModal />
+          <AutoOpenDemoModal />
           <WhatsAppButton />
           <BrowserRouter>
             <ScrollToTop />

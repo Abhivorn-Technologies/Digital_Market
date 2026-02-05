@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
-import founderPhoto from '@/assets/founder.png';
+import { User } from 'lucide-react';
 
-const team = [
-  { name: 'G.V.A SAI NIKHIL', role: 'Founder & CEO', specialty: 'Growth Strategy', image: founderPhoto },
-];
+const team = [1, 2, 3]; // 3 empty slots
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,14 +30,10 @@ const itemVariants = {
 
 export const TeamSection = () => {
   return (
-    <section className="section-padding bg-muted/30">
+    <section className="section-padding bg-white">
       <div className="max-w-7xl mx-auto container-padding">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="section-label justify-center mb-4">
@@ -47,41 +41,35 @@ export const TeamSection = () => {
             Our Team
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Meet the <span className="text-italic-bold text-gradient">Founder</span>
+            Meet the <span className="text-italic-bold text-gradient">Team</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The visionary lead dedicated to transforming your digital presence with AI-driven strategy
+            The visionary minds dedicated to transforming your digital presence with AI-driven strategy
           </p>
         </motion.div>
 
-
-
         {/* Team Members Grid */}
-        <div className="flex justify-center">
-          {team.map((member, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          {team.map((item, index) => (
             <motion.div
-              key={member.name}
-              initial="initial"
-              whileInView="animate"
-              whileHover="hover"
-              whileTap="hover"
-              viewport={{ once: true }}
+              key={index}
               className="flex flex-col items-center cursor-pointer group"
             >
               <div
-                className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/10 shadow-2xl"
+                className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/10 shadow-2xl bg-white flex items-center justify-center"
               >
-                <motion.img
-                  src={member.image}
-                  alt={member.name}
+                <motion.div
                   variants={{
-                    initial: { scale: 0.9, opacity: 0 },
+                    initial: { scale: 0.9, opacity: 0.5 },
                     animate: { scale: 1, opacity: 1 },
                     hover: { scale: 1.1 }
                   }}
                   transition={{ duration: 0.5 }}
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-300"
+                >
+                  <User className="w-24 h-24" />
+                </motion.div>
+
                 <motion.div
                   variants={{
                     initial: { opacity: 0 },
@@ -99,17 +87,10 @@ export const TeamSection = () => {
                   hover: { y: -5 }
                 }}
                 transition={{ duration: 0.3 }}
-                className="text-center mt-6"
+                className="text-center mt-6 w-full"
               >
-                <motion.h3
-                  variants={{
-                    hover: { scale: 1.05, color: 'var(--primary)' }
-                  }}
-                  className="text-2xl font-bold text-foreground mb-1 transition-colors"
-                >
-                  {member.name}
-                </motion.h3>
-                <p className="text-lg text-primary font-medium mb-1">{member.role}</p>
+                <div className="h-8 w-48 bg-gray-200 rounded-md mx-auto mb-2 animate-pulse" />
+                <div className="h-5 w-32 bg-gray-100 rounded-md mx-auto animate-pulse" />
               </motion.div>
             </motion.div>
           ))}

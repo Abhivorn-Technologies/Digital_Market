@@ -6,7 +6,7 @@ export const InteractiveMap = () => {
   const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.31604084!2d78.26795905!3d17.4122998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1706000000000!5m2!1sen!2sin";
 
   const officeInfo = [
-    { icon: MapPin, label: 'Address', value: 'Madhapur, Hyderabad, Telangana 500081, India' },
+    { icon: MapPin, label: 'Address', value: 'Shanthi Nilayam, MIG 648, near Temple Bus Stop, KPHB Phase 2, Kukatpally, Hyderabad, Telangana 500072' },
     { icon: Phone, label: 'Phone', value: '+91 87124 34896', link: 'tel:8712434896' },
     { icon: Mail, label: 'Email', value: 'Info@Scalenowdigital.com', link: 'mailto:Info@Scalenowdigital.com' },
   ];
@@ -40,20 +40,20 @@ export const InteractiveMap = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-sm bg-background/95 backdrop-blur-md rounded-xl p-4 shadow-xl border border-border"
+          className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-sm bg-background/95 backdrop-blur-md rounded-xl p-3.5 shadow-xl border border-border"
         >
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-2">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <MapPin className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h4 className="font-bold text-foreground">Scale Now Digital HQ</h4>
+              <div className="font-bold text-gray-900 mb-0.5">Scale Now Digital</div>
 
               <p className="text-xs text-muted-foreground">Hyderabad, India</p>
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             {officeInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
@@ -64,7 +64,7 @@ export const InteractiveMap = () => {
                   transition={{ delay: 0.7 + index * 0.1 }}
                   className="flex items-start gap-2"
                 >
-                  <IconComponent className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <IconComponent className="w-3.5 h-3.5 text-primary mt-0.5 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
                     <span className="text-xs text-muted-foreground">{info.label}: </span>
                     {info.link ? (
@@ -75,7 +75,7 @@ export const InteractiveMap = () => {
                         {info.value}
                       </a>
                     ) : (
-                      <span className="text-xs text-foreground">{info.value}</span>
+                      <span className="text-xs text-foreground leading-tight block">{info.value}</span>
                     )}
                   </div>
                 </motion.div>
@@ -90,7 +90,7 @@ export const InteractiveMap = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
+            className="mt-3 w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
           >
             Get Directions
             <ExternalLink className="w-4 h-4" />

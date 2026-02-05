@@ -7,13 +7,16 @@ export interface Testimonial {
   image?: string;
 }
 
+import akshithImage from '../assets/AKSHITH.png';
+
 export const testimonials: Testimonial[] = [
   {
     id: 1,
     quote: "Scale Now Digital transformed our entire digital strategy. Within 6 months, our organic traffic increased by 340% and our cost per acquisition dropped by 60%. Their integrated approach truly delivers.",
     author: "Palli Akshith",
     role: "CEO",
-    company: "Abhivorn Technologies"
+    company: "Abhivorn Technologies",
+    image: akshithImage
   },
   {
     id: 2,

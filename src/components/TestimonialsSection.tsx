@@ -53,9 +53,17 @@ export const TestimonialsSection = () => {
                 </blockquote>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
-                    {testimonials[currentIndex].author.charAt(0)}
-                  </div>
+                  {testimonials[currentIndex].image ? (
+                    <img
+                      src={testimonials[currentIndex].image}
+                      alt={testimonials[currentIndex].author}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
+                      {testimonials[currentIndex].author.charAt(0)}
+                    </div>
+                  )}
                   <div>
                     <div className="font-semibold text-foreground">
                       {testimonials[currentIndex].author}
@@ -78,9 +86,17 @@ export const TestimonialsSection = () => {
               <div className="hidden lg:block">
                 <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 text-3xl font-bold text-primary-foreground">
-                      {testimonials[currentIndex].author.charAt(0)}
-                    </div>
+                    {testimonials[currentIndex].image ? (
+                      <img
+                        src={testimonials[currentIndex].image}
+                        alt={testimonials[currentIndex].author}
+                        className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+                      />
+                    ) : (
+                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 text-3xl font-bold text-primary-foreground">
+                        {testimonials[currentIndex].author.charAt(0)}
+                      </div>
+                    )}
                     <p className="text-muted-foreground font-medium">{testimonials[currentIndex].author}</p>
                     <p className="text-sm text-muted-foreground">{testimonials[currentIndex].company}</p>
                   </div>

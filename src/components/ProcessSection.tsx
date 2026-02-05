@@ -73,7 +73,7 @@ export const ProcessSection = () => {
             Our Process
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            From Vision to <span className="text-italic-bold text-gradient">Victory</span>
+            From Vision to <span className="text-italic-bold text-gradient">Results</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Our proven 4-step methodology ensures consistent, measurable results for every client

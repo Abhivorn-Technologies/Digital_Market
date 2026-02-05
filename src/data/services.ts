@@ -34,7 +34,8 @@ export const services: Service[] = [
       'PPC (Pay-Per-Click) - Capture high-intent traffic with expertly managed campaigns',
       'Meta Ads - Reach ideal customers on Facebook and Instagram',
       'Google Ads - Dominate Search, Display, Shopping, YouTube, and Performance Max',
-      'Marketplace Ads - Strategic advertising on Amazon, Myntra, Nykaa, Ajio'
+      'Marketplace Ads - Strategic advertising on Amazon, Myntra, Nykaa, Ajio',
+      'Lead Generation - High-quality leads for your sales pipeline'
     ]
   },
   {
@@ -83,10 +84,8 @@ export const services: Service[] = [
     icon: 'Sparkles',
     features: [
       'Influencer Marketing - Connect with authentic voices your audience trusts',
-      'Talent Acquisition - Strategic recruitment and hiring processes',
-      'Employee Development - Training and upskilling programs',
-      'Performance Management - Goal setting and performance tracking',
-      'Retention Strategies - Build engaging workplace culture'
+      'Campaign Management - End-to-end execution of high-impact influencer campaigns',
+      'Performance Analytics - Track ROI and engagement metrics for every collaboration'
     ]
   },
   {

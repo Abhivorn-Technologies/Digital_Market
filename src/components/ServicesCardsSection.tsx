@@ -5,12 +5,12 @@ import { useModal } from '@/context/ModalContext';
 // Import service images
 // Import service images
 import serviceSeo from '@/assets/seo.jpg';
-import serviceAi from '@/assets/aicreative.jpg';
-import servicePaid from '@/assets/paidads.jpg';
+import serviceAi from '@/assets/AiCreatives.png';
+import servicePaid from '@/assets/paidads1.jpg';
 import serviceGlobal from '@/assets/globalconsulting.jpg';
-import serviceEmail from '@/assets/email-whatsapp.jpg';
+import serviceEmail from '@/assets/email-whatsapp1.jpg';
 import serviceTalent from '@/assets/influncermarketing.jpg';
-import serviceAnalytics from '@/assets/service-analytics.png';
+import serviceAnalytics from '@/assets/dataanalytics.jpg';
 
 const servicesCards = [
     {

@@ -9,14 +9,14 @@ import { services } from '@/data/services';
 // Import service images
 // Import service images
 import serviceSeo from '@/assets/seo.jpg';
-import servicePaid from '@/assets/paidads.jpg';
-import serviceAnalytics from '@/assets/service-analytics.png';
+import servicePaid from '@/assets/paidads1.jpg';
+import serviceAnalytics from '@/assets/dataanalytics.jpg';
 import servicePresales from '@/assets/presales.jpg';
-import serviceAi from '@/assets/aicreative.jpg';
+import serviceAi from '@/assets/AiCreatives.png';
 import serviceGlobal from '@/assets/globalconsulting.jpg';
 import serviceSocialMedia from '@/assets/socialmedia.jpg';
 import serviceTalent from '@/assets/influncermarketing.jpg';
-import serviceEmail from '@/assets/email-whatsapp.jpg';
+import serviceEmail from '@/assets/email-whatsapp1.jpg';
 
 const serviceImages: { [key: string]: string } = {
   'organic-media': serviceSeo,

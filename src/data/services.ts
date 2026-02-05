@@ -24,7 +24,7 @@ export const services: Service[] = [
   },
   {
     id: 'paid-media',
-    title: 'Paid Ads Search & Social Media',
+    title: 'Paid Ads',
 
     shortDesc: 'Generate immediate results with performance-driven campaigns across Google, Meta, and marketplaces',
     description: 'Drive immediate results and scalable growth through precision-targeted paid campaigns across multiple platforms.',

@@ -27,7 +27,7 @@ const services = [
   },
   {
     id: 'paid-media',
-    title: 'Paid Ads Search & Social Media',
+    title: 'Paid Ads',
 
     description: 'Drive immediate results with precision-targeted campaigns across Google Ads, Meta, marketplaces, and programmatic. Performance marketing that maximizes every dollar spent.',
     cta: 'DRIVE RESULTS',

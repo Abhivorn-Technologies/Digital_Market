@@ -17,6 +17,9 @@ const footerLinks = {
     { name: 'About Us', path: '/about' },
     { name: 'Our Team', path: '/about#team' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Terms & Conditions', path: '/terms-and-conditions' },
+    { name: 'Cookie Policy', path: '/cookie-policy' },
   ],
   resources: [
     { name: 'FAQ', path: '/faq' },
@@ -35,6 +38,10 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const handleOpenCookieSettings = () => {
+    window.dispatchEvent(new CustomEvent('openCookiePreferences'));
+  };
+
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto container-padding py-16">
@@ -106,6 +113,15 @@ export const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={handleOpenCookieSettings}
+                  className="text-background/70 hover:text-background transition-colors cursor-pointer text-left"
+                >
+                  Cookie Settings
+                </button>
+              </li>
             </ul>
           </div>
 

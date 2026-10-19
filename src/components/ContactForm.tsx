@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, User, Mail, Phone, MessageSquare, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ export const ContactForm = () => {
     phone: '',
     message: '',
   });
+  const [agreedToPolicy, setAgreedToPolicy] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -158,11 +160,29 @@ export const ContactForm = () => {
           </div>
         </div>
 
+        {/* Consent Checkbox */}
+        <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-border/60">
+          <input
+            type="checkbox"
+            id="contact-consent"
+            checked={agreedToPolicy}
+            onChange={(e) => setAgreedToPolicy(e.target.checked)}
+            required
+            className="mt-0.5 w-4 h-4 rounded border-border text-primary focus:ring-primary cursor-pointer accent-primary"
+          />
+          <label htmlFor="contact-consent" className="text-xs text-muted-foreground leading-relaxed cursor-pointer select-none">
+            I consent to the collection and processing of my contact information in accordance with the{' '}
+            <Link to="/privacy-policy" className="text-primary hover:underline font-medium">Privacy Policy</Link>
+            {' '}and accept the{' '}
+            <Link to="/terms-and-conditions" className="text-primary hover:underline font-medium">Terms and Conditions</Link>.
+          </label>
+        </div>
+
         {/* Submit Button */}
         <button
           type="submit"
-          disabled={isLoading}
-          className="w-full btn-primary justify-center py-4 disabled:opacity-70 disabled:cursor-not-allowed"
+          disabled={isLoading || !agreedToPolicy}
+          className="w-full btn-primary justify-center py-4 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
         >
           {isLoading ? (
             <>
@@ -171,14 +191,14 @@ export const ContactForm = () => {
             </>
           ) : (
             <>
-              Submit
+              Submit Inquiry
               <Send className="w-5 h-5" />
             </>
           )}
         </button>
 
-        <p className="text-xs text-muted-foreground text-center">
-          By signing up you agree to our Terms of Service and Privacy Policy
+        <p className="text-[11px] text-muted-foreground text-center">
+          Protected by enterprise-grade TLS encryption and strict DPDPA compliance.
         </p>
       </div>
     </motion.form>

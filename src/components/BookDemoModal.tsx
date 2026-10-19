@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle, Send, User, Mail, Phone, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useModal } from '@/context/ModalContext';
 
 export const BookDemoModal = () => {
@@ -12,6 +13,7 @@ export const BookDemoModal = () => {
         phone: '',
         message: '',
     });
+    const [agreedToPolicy, setAgreedToPolicy] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -30,6 +32,7 @@ export const BookDemoModal = () => {
 
     const resetForm = () => {
         setIsSubmitted(false);
+        setAgreedToPolicy(false);
         setFormData({ name: '', email: '', phone: '', message: '' });
         closeModal();
     };
@@ -147,10 +150,28 @@ export const BookDemoModal = () => {
                                                 </div>
                                             </div>
 
+                                            {/* Consent Checkbox */}
+                                            <div className="flex items-start gap-2 pt-1">
+                                                <input
+                                                    type="checkbox"
+                                                    id="demo-consent"
+                                                    checked={agreedToPolicy}
+                                                    onChange={(e) => setAgreedToPolicy(e.target.checked)}
+                                                    required
+                                                    className="mt-0.5 w-3.5 h-3.5 rounded border-border text-primary focus:ring-primary cursor-pointer accent-primary"
+                                                />
+                                                <label htmlFor="demo-consent" className="text-[11px] text-muted-foreground leading-snug cursor-pointer select-none">
+                                                    I agree to the processing of my details under the{' '}
+                                                    <Link to="/privacy-policy" onClick={closeModal} className="text-primary hover:underline font-medium">Privacy Policy</Link>
+                                                    {' '}and{' '}
+                                                    <Link to="/terms-and-conditions" onClick={closeModal} className="text-primary hover:underline font-medium">Terms</Link>.
+                                                </label>
+                                            </div>
+
                                             <button
                                                 type="submit"
-                                                disabled={isLoading}
-                                                className="w-full btn-primary justify-center py-2 text-sm"
+                                                disabled={isLoading || !agreedToPolicy}
+                                                className="w-full btn-primary justify-center py-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                                             >
                                                 {isLoading ? 'Sending...' : 'Book Demo'}
                                             </button>

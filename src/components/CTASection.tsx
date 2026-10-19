@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Send, User, Mail, Phone, Building } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const CTASection = () => {
   const [email, setEmail] = useState('');
+  const [agreed, setAgreed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!agreed) return;
     console.log('Demo request:', email);
     setIsSubmitted(true);
   };
@@ -108,13 +111,30 @@ export const CTASection = () => {
                     className="w-full pl-11 pr-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
-                <button type="submit" className="btn-primary w-full justify-center py-4 text-primary-foreground font-bold">
+                <div className="flex items-start gap-2.5 pt-1">
+                  <input
+                    type="checkbox"
+                    id="cta-consent"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    required
+                    className="mt-0.5 w-4 h-4 rounded border-border text-primary focus:ring-primary cursor-pointer accent-primary"
+                  />
+                  <label htmlFor="cta-consent" className="text-xs text-white/70 leading-relaxed cursor-pointer select-none">
+                    I agree to the processing of my details under the{' '}
+                    <Link to="/privacy-policy" className="text-primary hover:underline font-medium">Privacy Policy</Link>
+                    {' '}and accept the{' '}
+                    <Link to="/terms-and-conditions" className="text-primary hover:underline font-medium">Terms</Link>.
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  disabled={!agreed}
+                  className="btn-primary w-full justify-center py-4 text-primary-foreground font-bold disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+                >
                   Submit
                   <Send className="w-5 h-5" />
                 </button>
-                <p className="text-xs text-muted-foreground text-center">
-                  By signing up you agree to our Terms of Service and Privacy Policy
-                </p>
               </form>
             )}
           </motion.div>

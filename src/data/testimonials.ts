@@ -7,7 +7,7 @@ export interface Testimonial {
   image?: string;
 }
 
-import akshithImage from '../assets/AKSHITH.png';
+import akshithImage from '../assets/Akshith.jpeg';
 
 export const testimonials: Testimonial[] = [
   {

@@ -57,7 +57,7 @@ export const TestimonialsSection = () => {
                     <img
                       src={testimonials[currentIndex].image}
                       alt={testimonials[currentIndex].author}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="w-12 h-12 rounded-full object-cover object-[center_20%]"
                     />
                   ) : (
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
@@ -90,7 +90,7 @@ export const TestimonialsSection = () => {
                       <img
                         src={testimonials[currentIndex].image}
                         alt={testimonials[currentIndex].author}
-                        className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+                        className="w-20 h-20 rounded-full object-cover object-[center_20%] mx-auto mb-4"
                       />
                     ) : (
                       <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 text-3xl font-bold text-primary-foreground">
